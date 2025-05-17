@@ -19,7 +19,7 @@ with open("database/database.json", "r") as file:
         compounds.append(compound)
 
 test_comp = compounds[0]
-test_comp.concentration = 0.045
+test_comp.concentration = .01
 
 test_comp.gen_gaussian_distribution(WAVE_LENGTHS)
 test_comp.gen_absorption(test_comp.generated_epsilons, light_length=1.0)
