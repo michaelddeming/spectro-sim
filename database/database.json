@@ -1,0 +1,9 @@
+[
+    {
+        "name": "methylene blue",
+        "lambda_max": 665,
+        "epsilon_max": 15000,
+        "sigma": 20
+    }
+
+]
