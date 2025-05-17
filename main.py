@@ -21,7 +21,7 @@ with open("database/database.json", "r") as file:
 test_comp = compounds[0]
 test_comp.concentration = 0.045
 
-test_comp.gen_gaussian_distribution(WAVE_LENGHTS)
+test_comp.gen_gaussian_distribution(WAVE_LENGTHS)
 test_comp.gen_absorption(test_comp.generated_epsilons, light_length=1.0)
 
 
@@ -29,7 +29,7 @@ for val in test_comp.generated_absorption:
     print(val)
 
 
-plt.plot(WAVE_LENGHTS, test_comp.generated_absorption)
+plt.plot(WAVE_LENGTHS, test_comp.generated_absorption)
 plt.title(f"Absorption Spectroscopy of {(test_comp.name).title()}")
 plt.xlabel("Wavelength (nm)")
 plt.ylabel("A(λ)")

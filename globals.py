@@ -1,1 +1,1 @@
-WAVE_LENGHTS = [val for val in range(1,1001, 3)]
+WAVE_LENGTHS = [val for val in range(1,1001, 3)]
