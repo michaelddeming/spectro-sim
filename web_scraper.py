@@ -1,5 +1,6 @@
 import  requests
-
+import json
+import re
 
 
 
@@ -27,6 +28,30 @@ def get_cid(name: str) -> int:
 
 
 
-# def get_data_via_cid(cid:)
+def get_data_via_cid(cid: int):
 
-print(get_cid("asprin"))
+    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/{cid}/JSON"
+
+    response = requests.get(url)
+
+    try:
+        compound_data = response.json()
+        return compound_data["Record"]["Section"]
+
+    except KeyError:
+        print("Error, Compound Name Invalid.")
+    except TypeError:
+        print("Error 404, Invalid Search Reponse.")
+
+
+
+def write_data(data: json):
+
+    with open("compound_data.json", "w+", newline="") as file:
+        json.dump(data, file)
+
+
+
+
+# get_data_via_cid(get_cid("asprin"))
+
