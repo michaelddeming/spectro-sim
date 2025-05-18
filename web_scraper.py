@@ -47,11 +47,13 @@ def get_data_via_cid(cid: int):
 
 def write_data(data: json):
 
-    with open("compound_data.json", "w+", newline="") as file:
+    with open("compound_data.json", "w", newline="") as file:
         json.dump(data, file)
 
 
+def get_spectra_data(data:json):
+    pass
+    
 
 
-# get_data_via_cid(get_cid("asprin"))
-
+write_data(get_data_via_cid(get_cid("asprin")))
