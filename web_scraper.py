@@ -1,6 +1,6 @@
 import  requests
 import json
-import re
+import pprint
 
 
 
@@ -23,7 +23,7 @@ def get_cid(name: str) -> int:
     except KeyError:
         print("Error, Compound Name Invalid.")
     except TypeError:
-        print("Error 404, Invalid Search Reponse.")
+        print("Error 404, Invalid Search Response.")
 
 
 
@@ -41,19 +41,50 @@ def get_data_via_cid(cid: int):
     except KeyError:
         print("Error, Compound Name Invalid.")
     except TypeError:
-        print("Error 404, Invalid Search Reponse.")
+        print("Error 404, Invalid Search Response.")
 
 
+def get_spectral_information(data:json) -> json:
+    for section in data:
+        if section["TOCHeading"] == "Spectral Information":
+            return section
+    raise ValueError("Error, TOCHeading = Spectral Information not found")
 
-def write_data(data: json):
+def get_uv_spectra_information(data: json) -> json:
 
-    with open("compound_data.json", "w", newline="") as file:
+    for section in data["Section"]:
+        if section["TOCHeading"] == "UV Spectra":
+
+            if "Information" in section:
+                information = section.get("Information")
+                values = []
+
+                for dictionary in information:
+                    if "Value" in dictionary:
+                        value = dictionary.get("Value")
+                        value = value.get("StringWithMarkup")
+                        value = value[0].get("String")
+                        values.append(value)
+                return values
+            return None
+    raise ValueError("Error, TOCHeading = UV Spectra not found")
+
+def write_data(data: json, indicator: int):
+
+    with open(f"compound_data{indicator}.json", "w+", newline="") as file:
         json.dump(data, file)
 
 
-def get_spectra_data(data:json):
-    pass
-    
 
 
-write_data(get_data_via_cid(get_cid("asprin")))
+
+cid = get_cid("Toluene")
+
+data = get_data_via_cid(cid=cid)
+spectral_information = get_spectral_information(data=data)
+values = get_uv_spectra_information(spectral_information)
+
+for value in values:
+    print(value)
+
+
