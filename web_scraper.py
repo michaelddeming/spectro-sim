@@ -1,6 +1,6 @@
 import  requests
 import json
-import pprint
+import re
 
 
 
@@ -78,13 +78,21 @@ def write_data(data: json, indicator: int):
 
 
 
-cid = get_cid("Toluene")
+cid = get_cid("Benzoic Acid")
 
 data = get_data_via_cid(cid=cid)
 spectral_information = get_spectral_information(data=data)
 values = get_uv_spectra_information(spectral_information)
 
+
+
+
+# pattern = r"MAX\w{1}ABSORPTION\w{1}\(ALCOHOL\):\s{1}\d+\s{1}\w{2}\w{1}\(LOG\w{1}E=\w{1}.+\)"
+
+pattern = r"MAX ABSORPTION \(ALCOHOL\): \d+ \w{2} \(LOG E= .+?\)"
+found_match = None
 for value in values:
-    print(value)
-
-
+    match = re.search(pattern, value)
+    if match:
+        found_match = match[0]
+print(found_match)
