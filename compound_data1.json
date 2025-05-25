@@ -1,0 +1,67 @@
+{
+  "TOCHeading": "UV Spectra",
+  "Description": "Ultraviolet (UV) spectroscopy (or Spectrophotometry) is an analytical technique used to measure how much a molecule absorbs light in the ultraviolet spectral region.  This technique is particularly useful to study aromatic, conjugated, and other substances containing a pi bond.  Modern ultraviolet spectrophotometers also cover the visible light range, in which case the technique is called ultraviolet-visible (UV-Vis) spectroscopy.",
+  "URL": "https://chem.libretexts.org/Courses/Brevard_College/CHE_202%3A_Organic_Chemistry_II/05%3A_Structural__Determination_I/5.05%3A_Ultraviolet_and_visible_spectroscopy",
+  "Information": [
+    {
+      "ReferenceNumber": 60,
+      "Description": "PEER REVIEWED",
+      "Reference": [
+        "Weast, R.C. (ed.). Handbook of Chemistry and Physics. 57th ed. Cleveland: CRC Press Inc., 1976., p. C-191"
+      ],
+      "ExtendedReference": [
+        {
+          "Citation": "Weast, R.C. (ed.). Handbook of Chemistry and Physics. 57th ed. Cleveland: CRC Press Inc., 1976., p. C-191",
+          "Matched": { "PCLID": 900094570 }
+        }
+      ],
+      "Value": {
+        "StringWithMarkup": [
+          {
+            "String": "MAX ABSORPTION (ETHER): 275 NM (LOG E= 3.11); SADTLER REF NUMBER: 51 (IR, PRISM)"
+          }
+        ]
+      }
+    },
+    {
+      "ReferenceNumber": 60,
+      "Description": "PEER REVIEWED",
+      "Reference": [
+        "O'Neil, M.J. (ed.). The Merck Index - An Encyclopedia of Chemicals, Drugs, and Biologicals. Whitehouse Station, NJ:  Merck and Co., Inc., 2006., p. 140"
+      ],
+      "ExtendedReference": [
+        {
+          "Citation": "O'Neil, M.J. (ed.). The Merck Index - An Encyclopedia of Chemicals, Drugs, and Biologicals. Whitehouse Station, NJ:  Merck and Co., Inc., 2006., p. 140",
+          "Matched": { "PCLID": 900123151 }
+        }
+      ],
+      "Value": {
+        "StringWithMarkup": [
+          {
+            "String": "UV max: (0.1 N H2SO4): 229 (E(1%)(cm) 484); (CHCl3): 277 (E(1%)(cm) 68)"
+          }
+        ]
+      }
+    },
+    {
+      "ReferenceNumber": 60,
+      "Description": "PEER REVIEWED",
+      "Reference": [
+        "Lide, D.R., G.W.A. Milne (eds.). Handbook of Data on Organic Compounds. Volume I. 3rd ed. CRC Press, Inc. Boca Raton ,FL. 1994., p. V2: 1347"
+      ],
+      "ExtendedReference": [
+        {
+          "Citation": "Lide, D.R., G.W.A. Milne (eds.). Handbook of Data on Organic Compounds. Volume I. 3rd ed. CRC Press, Inc. Boca Raton ,FL. 1994., p. V2: 1347",
+          "Matched": { "PCLID": 900152099 }
+        }
+      ],
+      "Value": {
+        "StringWithMarkup": [
+          {
+            "String": "UV: 25 (Sadtler Research Laboratories Spectral Collection)"
+          }
+        ]
+      }
+    }
+  ]
+}
