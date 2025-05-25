@@ -15,4 +15,4 @@ node_modules/
 .pnpm/
 package-lock.json
 yarn.lock
-pnpm-lock.yaml*.pyc
+pnpm-lock.yaml
