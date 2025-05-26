@@ -1,13 +1,9 @@
 import Nav from "../features/Nav";
-
-function Home() {
+export default function About(){
     return(
         <>
-        <Nav></Nav>
-
+            <Nav></Nav>
         </>
     );
-};
-
-export default Home;
-
+ 
+}

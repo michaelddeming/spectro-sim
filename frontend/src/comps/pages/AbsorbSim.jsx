@@ -1,6 +1,6 @@
 import Nav from "../features/Nav";
 
-function Home() {
+function AbsorbSim() {
     return(
         <>
         <Nav></Nav>
@@ -9,5 +9,5 @@ function Home() {
     );
 };
 
-export default Home;
+export default AbsorbSim;
 
