@@ -4,13 +4,15 @@ import Home from './comps/pages/Home';
 
 function App() {
   return (
-    <>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-      </Routes>
-    </Router>
-    </>
+
+    <div className='p-5'>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+        </Routes>
+      </Router>
+    </div>
+
   )
 }
   

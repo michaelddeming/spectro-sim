@@ -1,9 +1,9 @@
-
+import Nav from "../sub_comps/Nav";
 
 function Home() {
     return(
         <>
-
+        <Nav></Nav>
 
         </>
     );
