@@ -9,7 +9,7 @@ import AbsorbSim from './comps/pages/AbsorbSim';
 
 function App() {
   return (
-
+    
     <Layout>
       <Router>
         <Routes>
