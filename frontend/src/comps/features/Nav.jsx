@@ -21,7 +21,7 @@ function Nav(){
                 <div className="relative group">
                     <button className="inline-block cursor-pointer ">Simulators</button>
 
-                    <div className="absolute hidden group-hover:flex flex-col whitespace-nowrap pt-1">
+                    <div className="absolute hidden group-hover:flex flex-col whitespace-nowrap">
                         <Link to="/absorbsim" className="hover:text-slate-500">AbsorbSim</Link>
                         <Link className="hover:text-slate-500">Coming Soon!</Link>
                     

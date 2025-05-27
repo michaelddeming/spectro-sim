@@ -2,7 +2,7 @@
 
 function Card({children}){
     return(
-        <div className="rounded-lg p-3 bg-slate-800 shadow-2xl">
+        <div className="w-fit rounded-lg p-3 bg-slate-600 shadow-[4px_4px_8px_rgba(0,0,0,0.3)]">
            {children}
         </div>
     );

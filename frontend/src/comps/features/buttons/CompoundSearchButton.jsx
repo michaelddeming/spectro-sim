@@ -1,5 +1,5 @@
 
-export default function Button1(props){
+export default function CompoundSearchButton(props){
     return(
         <>
 
