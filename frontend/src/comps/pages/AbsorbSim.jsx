@@ -8,15 +8,15 @@ function AbsorbSim(props) {
   return (
     <>
       <Nav></Nav>
-      <div className="flex flex-col items-center justify-center gap-15">
+      <div className="flex flex-col items-center justify-center gap-12">
         {/* COMPOUND SEARCH SECTION */}
-        <div className="flex flex-col items-center gap-2 pt-30">
-          <h1 className="text-3xl ">Compound Search</h1>
-          <div className="flex flex-row gap-4 w-fit">
+        <div className="flex flex-col items-center gap-2">
+          <h1 className="text-3xl mb-3">Compound Search</h1>
+          <div className="flex flex-row gap-2 w-fit">
             <CompoundInput></CompoundInput>
             <CompoundSearchButton text="SEARCH"></CompoundSearchButton>
           </div>
-          <p style={{ color: "#DFFCFD" }} className="text-xs mt-3">
+          <p style={{ color: "#DFFCFD" }} className="text-xs mt-1">
             Spectral data sourced from the{" "}
             <a
               href="https://pubchem.ncbi.nlm.nih.gov"
@@ -28,7 +28,7 @@ function AbsorbSim(props) {
             database.
           </p>
 
-          <p>
+          <p className="mt-4">
             Search Status: <text className="text-blue-300">None</text>
           </p>
         </div>
@@ -44,7 +44,7 @@ function AbsorbSim(props) {
               <GeneratePlotButton text="Generate AbsorbSim"></GeneratePlotButton>
             </div>
             <p>
-              Lorem
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora mollitia, eligendi, et quae ratione maiores, aliquam reprehenderit aliquid quam magnam harum in non voluptas dolores eaque! Nesciunt molestias dolor earum.
             </p>
           </div>
 

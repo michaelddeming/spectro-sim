@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Nav(){
     return(
         <>
-        <nav className="flex flex-row gap-10 items-center text-2xl">
+        <nav className="flex flex-col md:flex-row md:justify-between gap-10 items-center pb-15">
             
             {/* SITE LOGO */}
             <div >
