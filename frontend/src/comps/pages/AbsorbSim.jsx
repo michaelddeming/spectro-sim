@@ -8,7 +8,7 @@ function AbsorbSim(props) {
   return (
     <>
       <Nav></Nav>
-      <div className="flex flex-col items-center justify-center gap-10">
+      <div className="flex flex-col items-center justify-center gap-15">
         {/* COMPOUND SEARCH SECTION */}
         <div className="flex flex-col items-center gap-2 pt-30">
           <h1 className="text-3xl ">Compound Search</h1>
@@ -34,29 +34,28 @@ function AbsorbSim(props) {
         </div>
 
         {/* COMPOUND SEARCH PLOT GENERATION */}
-        <div className="flex flex-row flex-wrap justify-evenly gap-y-4">
-          <div className="w-1/2">
+        <div className="flex flex-row flex-wrap gap-y-4">
+
+          
+          {/* LEFT SECTION */}
+          <div className="w-full md:w-1/2">
             <div className="flex flex-row items-center mb-2 gap-2">
-                <h1 className="text-xl font-bold">TEST COMPOUND</h1>            
-              <GeneratePlotButton
-                className="px-4"
-                text="Generate AbsorbSim"
-              ></GeneratePlotButton>
+              <h1 className="text-xl font-bold">TEST COMPOUND</h1>
+              <GeneratePlotButton text="Generate AbsorbSim"></GeneratePlotButton>
             </div>
-            <p className="w-3/4">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non eum,
-              voluptatem sint voluptas quia rerum eos architecto nisi cum facere
-              provident vitae illo nobis modi molestias, minima in consequuntur
-              excepturi.
+            <p>
+              Lorem
             </p>
           </div>
 
-          <div>
+          {/* RIGHT SECTION */}
+          <div className="w-full md:w-1/2">
+            {/* PLOT & DOWNLOAD BTN */}
             <div className="flex flex-col gap-2">
-                <img
-                  className="rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.3)]"
-                  src="/public/spectroplot.jpg"
-                ></img>
+              <img
+                className="rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.3)]"
+                src="/public/spectroplot.jpg"
+              ></img>
               <GeneratePlotButton text="Download AborbSim GIF"></GeneratePlotButton>
             </div>
           </div>
