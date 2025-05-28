@@ -28,13 +28,13 @@ function AbsorbSim(props) {
             database.
           </p>
 
-          <p className="mt-4">
+          <p className="mt-4 mb-8">
             Search Status: <text className="text-blue-300">None</text>
           </p>
         </div>
 
         {/* COMPOUND SEARCH PLOT GENERATION */}
-        <div className="flex flex-wrap lg:flex-nowrap w-full p-10 justify-center gap-4">
+        <div className="flex flex-wrap lg:flex-nowrap w-full lg:p-10 justify-center gap-4">
           {/* LEFT SECTION */}
           <div className="w-full lg:w-[48%]">
             {/* COMPOUND TITLE and GENERATE BUTTON */}
