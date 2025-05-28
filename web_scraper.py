@@ -45,7 +45,7 @@ def get_data_via_cid(compound_dict: dict) -> dict:
             compound_dict["compound_data_string"] = response.text
             return compound_dict
 
-def extract_alcohol_abs_spectro(compound_dict) -> dict:
+def extract_abs_spectro(compound_dict) -> dict:
     """Given the compound_dict returned by the get_data_via_cid(), search for a 'MAX ABSORPTION...' pattern within the compound_data_string within the compound_dict provided (compound_dict["compound_dict"]])."""
 
     pattern = r"MAX ABSORPTION \((.+)\): (\d+) \w{2} \(LOG E= (.+?)\)"
@@ -65,9 +65,9 @@ def extract_alcohol_abs_spectro(compound_dict) -> dict:
     else:
         raise ValueError(f"Error: No UV/Vis data found for {compound_dict["name"]}.")
 
-cid = get_cid("benzoic acid")
+cid = get_cid("asprin")
 data_dict = get_data_via_cid(cid)
-print(extract_alcohol_abs_spectro(data_dict))
+print(extract_abs_spectro(data_dict))
 
 def write_data(data: json, indicator: int):
 
