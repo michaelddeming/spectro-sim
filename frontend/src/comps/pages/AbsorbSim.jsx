@@ -8,7 +8,7 @@ function AbsorbSim(props) {
   return (
     <>
       <Nav></Nav>
-      <div className="flex flex-col items-center justify-center gap-12">
+      <div className="flex flex-col items-center justify-center gap-4">
         {/* COMPOUND SEARCH SECTION */}
         <div className="flex flex-col items-center gap-2">
           <h1 className="text-3xl mb-3">Compound Search</h1>
@@ -34,9 +34,9 @@ function AbsorbSim(props) {
         </div>
 
         {/* COMPOUND SEARCH PLOT GENERATION */}
-        <div className="flex flex-wrap md:flex-nowrap w-full p-10 justify-center gap-10">
+        <div className="flex flex-wrap lg:flex-nowrap w-full p-10 justify-center gap-4">
           {/* LEFT SECTION */}
-          <div className="w-full md:w-[48%]">
+          <div className="w-full lg:w-[48%]">
             {/* COMPOUND TITLE and GENERATE BUTTON */}
             <div className="flex flex-wrap items-center mb-2 gap-x-2 pr-2 w-full">
               <h1 className="text-xl font-bold">TEST COMPOUND</h1>
@@ -61,7 +61,7 @@ function AbsorbSim(props) {
               {/* COMPOUND TABLE DATA */}
               <div className="mt-4">
                 <h2 className="font-bold underline">Spectral Data:</h2>
-                <div className="overflow-x-auto rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,.7)]">
+                <div className="overflow-x-auto rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,.7)] mt-2">
                   <table className="min-w-full text-left bg-slate-600 border-collapse">
                     <thead className="bg-slate-800 text-cyan-500">
                       <tr>
@@ -102,7 +102,7 @@ function AbsorbSim(props) {
           </div>
 
           {/* RIGHT SECTION */}
-          <div className="flex justify-center w-full md:w-[48%]">
+          <div className="flex justify-center w-full lg:w-[48%]">
             {/* PLOT & DOWNLOAD BTN */}
             <div className="w-fit flex flex-col gap-2">
               <img
