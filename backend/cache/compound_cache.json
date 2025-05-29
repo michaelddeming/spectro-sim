@@ -1,0 +1,22 @@
+{
+  "methylene blue": {
+    "name": "methylene blue",
+    "lambda_max": 665,
+    "epsilon_max": 15000,
+    "sigma": 20
+  },
+  "caffeine": {
+    "name": "caffeine",
+    "cid": 2519,
+    "solvent": "alcohol",
+    "lambda_max": 227.0,
+    "epsilon": 19952.62
+  },
+  "asprin": {
+    "name": "asprin",
+    "cid": 2244,
+    "solvent": "ether",
+    "lambda_max": 275.0,
+    "epsilon": 1288.25
+  }
+}

@@ -21,9 +21,8 @@ def get_cid(name: str) -> dict:
         return {"name":name.lower(), 
                 "cid":compound_data["IdentifierList"]["CID"][0]}
     except KeyError:
-        print("Error, Compound Name Invalid.")
-    except TypeError:
-        print("Error 404, Invalid Search Response.")
+        raise ValueError(f"Invalid compound name={name}.")
+    
 
 
 
@@ -39,7 +38,7 @@ def get_data_via_cid(compound_dict: dict) -> dict:
     try:
         response = requests.get(url)
     except TypeError:
-        print("Error 404, Invalid Search Response.")
+        raise ValueError("Error 404, Invalid Search Response.")
     
     if response:
             compound_dict["compound_data_string"] = response.text
