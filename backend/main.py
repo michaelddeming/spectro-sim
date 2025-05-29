@@ -4,7 +4,7 @@ import json
 
 from classes.Compound import Compound
 
-from globals import *
+from backend.globals import *
 
 compounds = []
 
