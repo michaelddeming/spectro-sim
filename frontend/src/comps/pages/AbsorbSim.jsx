@@ -3,6 +3,7 @@ import CompoundInput from "../features/CompoundInput";
 import Nav from "../features/Nav";
 import Card from "../features/Card";
 import GeneratePlotButton from "../features/buttons/GeneratePlotButton";
+import AbsorbSimPlot from "../features/AbsorbSimPlot";
 
 function AbsorbSim(props) {
   return (
@@ -34,7 +35,7 @@ function AbsorbSim(props) {
         </div>
 
         {/* COMPOUND SEARCH PLOT GENERATION */}
-        <div className="flex flex-wrap lg:flex-nowrap w-full lg:p-10 justify-center gap-4">
+        <div className="flex flex-wrap lg:flex-nowrap w-full lg:p-10 justify-center gap-8">
           {/* LEFT SECTION */}
           <div className="w-full lg:w-[48%]">
             {/* COMPOUND TITLE and GENERATE BUTTON */}
@@ -102,17 +103,25 @@ function AbsorbSim(props) {
           </div>
 
           {/* RIGHT SECTION */}
-          <div className="flex justify-center w-full lg:w-[48%]">
+          <div className="flex justify-center items-center w-full lg:w-[48%]">
             {/* PLOT & DOWNLOAD BTN */}
-            <div className="w-fit flex flex-col gap-2">
-              <img
-                className="rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.7)] w-150"
-                src="/public/spectroplot.jpg"
-              ></img>
-              <GeneratePlotButton text="Download AborbSim"></GeneratePlotButton>
+
+              <div className="flex flex-col   w-full max-w-[750px] gap-2 items-start">
+                <div className='w-full aspect-[4/3]'>
+                  <AbsorbSimPlot></AbsorbSimPlot>
+                </div>
+                
+                
+                <div className="">
+                  <GeneratePlotButton text="Download AborbSim"></GeneratePlotButton>
+                </div>
+                
+              </div>
+                
+               
+              
             </div>
           </div>
-        </div>
       </div>
     </>
   );
