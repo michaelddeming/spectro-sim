@@ -1,22 +1,79 @@
 {
-  "methylene blue": {
-    "name": "methylene blue",
-    "lambda_max": 665,
-    "epsilon_max": 15000,
-    "sigma": 20
-  },
   "caffeine": {
     "name": "caffeine",
     "cid": 2519,
+    "description": {
+      "description": "Caffeine appears as odorless white powder or white glistening needles, usually melted together. Bitter taste. Solutions in water are neutral to litmus. Odorless. (NTP, 1992)",
+      "reference": "National Toxicology Program, Institute of Environmental Health Sciences, National Institutes of Health (NTP). 1992. National Toxicology Program Chemical Repository Database. Research Triangle Park, North Carolina."
+    },
     "solvent": "alcohol",
     "lambda_max": 227.0,
     "epsilon": 19952.62
   },
-  "asprin": {
-    "name": "asprin",
+  "aspirin": {
+    "name": "aspirin",
     "cid": 2244,
+    "description": {
+      "description": "Aspirin can cause developmental toxicity and female reproductive toxicity according to an independent committee of scientific and health experts.",
+      "reference": null
+    },
     "solvent": "ether",
     "lambda_max": 275.0,
     "epsilon": 1288.25
+  },
+  "benzoic acid": {
+    "name": "benzoic acid",
+    "cid": 243,
+    "description": {
+      "description": "Benzoic acid appears as a white crystalline solid. Slightly soluble in water. The primary hazard is the potential for environmental damage if released. Immediate steps should be taken to limit spread to the environment. Used to make other chemicals, as a food preservative, and for other uses.",
+      "reference": null
+    },
+    "solvent": "alcohol",
+    "lambda_max": 227.0,
+    "epsilon": 11481.54
+  },
+  "benzene": {
+    "name": "benzene",
+    "cid": 241,
+    "description": {
+      "description": "Benzene is a colorless liquid with a sweet odor. It evaporates into the air very quickly and dissolves slightly in water. It is highly flammable and is formed from both natural processes and human activities. Benzene is widely used in the United States; it ranks in the top 20 chemicals for production volume. Some industries use benzene to make other chemicals which are used to make plastics, resins, and nylon and synthetic fibers. Benzene is also used to make some types of rubbers, lubricants, dyes, detergents, drugs, and pesticides. Natural sources of benzene include volcanoes and forest fires. Benzene is also a natural part of crude oil, gasoline, and cigarette smoke.",
+      "reference": null
+    },
+    "solvent": "alcohol",
+    "lambda_max": 243.0,
+    "epsilon": 158.49
+  },
+  "quinidine": {
+    "name": "quinidine",
+    "cid": 441074,
+    "description": {
+      "description": "Crystals or white powder. (NTP, 1992)",
+      "reference": "National Toxicology Program, Institute of Environmental Health Sciences, National Institutes of Health (NTP). 1992. National Toxicology Program Chemical Repository Database. Research Triangle Park, North Carolina."
+    },
+    "solvent": "methanol",
+    "lambda_max": 230.0,
+    "epsilon": 33884.42
+  },
+  "riboflavin": {
+    "name": "riboflavin",
+    "cid": 493570,
+    "description": {
+      "description": "Riboflavin is d-Ribitol in which the hydroxy group at position 5 is substituted by a 7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl moiety. It is a nutritional factor found in milk, eggs, malted barley, liver, kidney, heart, and leafy vegetables, but the richest natural source is yeast. The free form occurs only in the retina of the eye, in whey, and in urine; its principal forms in tissues and cells are as flavin mononucleotide and flavin-adenine dinucleotide. It has a role as a photosensitizing agent, a food colouring, an Escherichia coli metabolite, a mouse metabolite, a cofactor, a plant metabolite, a human urinary metabolite, an anti-inflammatory agent, a fundamental metabolite and an antioxidant. It is a vitamin B2 and a flavin. It is a conjugate acid of a riboflavin(1-).",
+      "reference": null
+    },
+    "solvent": "water",
+    "lambda_max": 267.0,
+    "epsilon": 32359.37
+  },
+  "beta-carotene": {
+    "name": "beta-carotene",
+    "cid": 5280489,
+    "description": {
+      "description": "Beta-carotene is a cyclic carotene obtained by dimerisation of all-trans-retinol. A strongly-coloured red-orange pigment abundant in plants and fruit and the most active and important provitamin A carotenoid. It has a role as a biological pigment, a provitamin A, a plant metabolite, a human metabolite, a mouse metabolite, a cofactor, a ferroptosis inhibitor and an antioxidant. It is a cyclic carotene and a carotenoid beta-end derivative.",
+      "reference": null
+    },
+    "solvent": "benzene",
+    "lambda_max": 278.0,
+    "epsilon": 19952.62
   }
 }

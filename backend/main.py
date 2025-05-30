@@ -21,7 +21,7 @@ def get_compound_name(name: str = None):
     try:
         with open("cache/compound_cache.json", "r") as file:
             content = json.load(file)
-    except FileNotFoundError():
+    except FileNotFoundError:
         content = {}
         
     found_compound = content.get(name)
