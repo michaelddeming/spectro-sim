@@ -11,9 +11,6 @@ import { useState, useEffect } from "react";
 
 export default function AbsorbSim(props) {
   
-  function TitleCase(str) {
-    
-  }
   
   const [comp_name, setCompName] = useState("Test Compound");
   const [comp_desc, setCompDesc] = useState("Dummy");
