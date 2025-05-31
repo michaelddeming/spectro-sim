@@ -75,5 +75,16 @@
     "solvent": "benzene",
     "lambda_max": 278.0,
     "epsilon": 19952.62
+  },
+  "asprin": {
+    "name": "asprin",
+    "cid": 2244,
+    "description": {
+      "description": "Aspirin can cause developmental toxicity and female reproductive toxicity according to an independent committee of scientific and health experts.",
+      "reference": null
+    },
+    "solvent": "ether",
+    "lambda_max": 275.0,
+    "epsilon": 1288.25
   }
 }

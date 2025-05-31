@@ -4,8 +4,48 @@ import Nav from "../features/Nav";
 import Card from "../features/Card";
 import GeneratePlotButton from "../features/buttons/GeneratePlotButton";
 import AbsorbSimPlot from "../features/AbsorbSimPlot";
+import React from "react";
 
-function AbsorbSim(props) {
+import { useState, useEffect } from "react";
+
+
+export default function AbsorbSim(props) {
+  
+  function TitleCase(str) {
+    
+  }
+  
+  const [comp_name, setCompName] = useState("Test Compound");
+  const [comp_desc, setCompDesc] = useState("Dummy");
+  const [compound, setCompound] = useState(null);
+
+ 
+
+  const handleCompoundSearch = async (event) => {
+    event.preventDefault();
+    const name = event.target.elements.compoundName.value.trim()
+    if (!name) return;
+    try {
+      const response = await fetch(`http://127.0.0.1:8000/absorbsim-compound?name=${name}`, {
+      method:"GET",
+    });
+    const data = await response.json();
+    const compoundKey = Object.keys(data)[0];
+    const compoundData = data[compoundKey];   
+    console.log(compoundData)
+    
+    setCompound(compoundData);
+    setCompName(compoundData.name.title())
+    
+  } catch (error) {
+    console.log(error);
+  }}
+
+
+
+  
+  
+  
   return (
     <>
       <Nav></Nav>
@@ -14,8 +54,12 @@ function AbsorbSim(props) {
         <div className="flex flex-col items-center gap-2">
           <h1 className="text-3xl mb-3">Compound Search</h1>
           <div className="flex flex-row gap-2 w-fit">
-            <CompoundInput></CompoundInput>
-            <CompoundSearchButton text="SEARCH"></CompoundSearchButton>
+            <form onSubmit={handleCompoundSearch}>
+            <CompoundInput name="compoundName"
+            ></CompoundInput>
+            <CompoundSearchButton text="SEARCH" type="submit"></CompoundSearchButton>
+            </form>
+
           </div>
           <p style={{ color: "#DFFCFD" }} className="text-xs mt-1">
             Spectral data sourced from the{" "}
@@ -29,9 +73,9 @@ function AbsorbSim(props) {
             database.
           </p>
 
-          <p className="mt-4 mb-8">
-            Search Status: <text className="text-blue-300">None</text>
-          </p>
+          <small className="mt-4 mb-8">
+            Search Status: <small className="text-blue-300">None</small>
+          </small>
         </div>
 
         {/* COMPOUND SEARCH PLOT GENERATION */}
@@ -40,7 +84,7 @@ function AbsorbSim(props) {
           <div className="w-full lg:w-[48%]">
             {/* COMPOUND TITLE and GENERATE BUTTON */}
             <div className="flex flex-wrap items-center mb-2 gap-x-2 pr-2 w-full">
-              <h1 className="text-xl font-bold">TEST COMPOUND</h1>
+              <h1 className="text-xl font-bold">{comp_name}</h1>
               <GeneratePlotButton text="Generate AbsorbSim"></GeneratePlotButton>
             </div>
 
@@ -125,6 +169,4 @@ function AbsorbSim(props) {
       </div>
     </>
   );
-}
-
-export default AbsorbSim;
+};

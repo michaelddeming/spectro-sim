@@ -1,26 +1,50 @@
 [
   {
-    "ReferenceNumber": 3,
+    "ReferenceNumber": 4,
     "Name": "Record Description",
     "Description": "Ontology Summary",
     "Value": {
       "StringWithMarkup": [
         {
-          "String": "Beta-carotene is a cyclic carotene obtained by dimerisation of all-trans-retinol. A strongly-coloured red-orange pigment abundant in plants and fruit and the most active and important provitamin A carotenoid. It has a role as a biological pigment, a provitamin A, a plant metabolite, a human metabolite, a mouse metabolite, a cofactor, a ferroptosis inhibitor and an antioxidant. It is a cyclic carotene and a carotenoid beta-end derivative.",
+          "String": "Aspirin can cause developmental toxicity and female reproductive toxicity according to an independent committee of scientific and health experts.",
           "Markup": [
             {
               "Start": 0,
-              "Length": 13,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Beta-carotene",
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin",
               "Type": "PubChem Internal Link",
-              "Extra": "CID-5280489"
-            },
+              "Extra": "CID-2244"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "ReferenceNumber": 7,
+    "Description": "Physical Description",
+    "Reference": [
+      "National Toxicology Program, Institute of Environmental Health Sciences, National Institutes of Health (NTP). 1992. National Toxicology Program Chemical Repository Database. Research Triangle Park, North Carolina."
+    ],
+    "ExtendedReference": [
+      {
+        "Citation": "National Toxicology Program, Institute of Environmental Health Sciences, National Institutes of Health (NTP). 1992. National Toxicology Program Chemical Repository Database. Research Triangle Park, North Carolina.",
+        "Matched": {
+          "PCLID": 900163266
+        }
+      }
+    ],
+    "Value": {
+      "StringWithMarkup": [
+        {
+          "String": "Acetylsalicylic acid appears as odorless white crystals or crystalline powder with a slightly bitter taste. (NTP, 1992)",
+          "Markup": [
             {
-              "Start": 63,
-              "Length": 17,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/all-trans-retinol",
+              "Start": 0,
+              "Length": 20,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Acetylsalicylic%20acid",
               "Type": "PubChem Internal Link",
-              "Extra": "CID-445354"
+              "Extra": "CID-2244"
             }
           ]
         }
@@ -29,112 +53,152 @@
   },
   {
     "ReferenceNumber": 11,
+    "Name": "Record Description",
+    "Description": "Ontology Summary",
     "Value": {
       "StringWithMarkup": [
         {
-          "String": "Beta-carotene, with the molecular formula C40H56, belongs to the group of carotenoids consisting of isoprene units. The presence of long chains of conjugated double bonds donates beta-carotene with specific colors. It is the most abundant form of carotenoid and it is a precursor of the vitamin A. Beta-carotene is composed of two retinyl groups. It is an antioxidant that can be found in yellow, orange and green leafy vegetables and fruits. Under the FDA, beta-carotene is considered as a generally recognized as safe substance (GRAS).",
+          "String": "Acetylsalicylic acid is a member of the class of benzoic acids that is salicylic acid in which the hydrogen that is attached to the phenolic hydroxy group has been replaced by an acetoxy group. A non-steroidal anti-inflammatory drug with cyclooxygenase inhibitor activity. It has a role as a non-steroidal anti-inflammatory drug, a non-narcotic analgesic, a platelet aggregation inhibitor, an antipyretic, a cyclooxygenase 2 inhibitor, a cyclooxygenase 1 inhibitor, a prostaglandin antagonist, a teratogenic agent, an anticoagulant, a plant activator, an EC 1.1.1.188 (prostaglandin-F synthase) inhibitor, a drug allergen and a geroprotector. It is a member of benzoic acids, a member of salicylates and a member of phenyl acetates. It is functionally related to a salicylic acid. It is a conjugate acid of an acetylsalicylate.",
           "Markup": [
             {
               "Start": 0,
-              "Length": 13,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Beta-carotene",
+              "Length": 20,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Acetylsalicylic%20acid",
               "Type": "PubChem Internal Link",
-              "Extra": "CID-5280489"
+              "Extra": "CID-2244"
             },
             {
-              "Start": 100,
+              "Start": 71,
+              "Length": 14,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/salicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-338"
+            },
+            {
+              "Start": 99,
               "Length": 8,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/isoprene",
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/element/Hydrogen",
               "Type": "PubChem Internal Link",
-              "Extra": "CID-6557"
+              "Extra": "Element-Hydrogen"
             },
             {
-              "Start": 179,
-              "Length": 13,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/beta-carotene",
-              "Type": "PubChem Internal Link",
-              "Extra": "CID-5280489"
-            },
-            {
-              "Start": 298,
-              "Length": 13,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Beta-carotene",
-              "Type": "PubChem Internal Link",
-              "Extra": "CID-5280489"
-            },
-            {
-              "Start": 458,
-              "Length": 13,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/beta-carotene",
-              "Type": "PubChem Internal Link",
-              "Extra": "CID-5280489"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "ReferenceNumber": 56,
-    "Value": {
-      "StringWithMarkup": [
-        {
-          "String": "Beta-Carotene has been reported in Planktothrix rubescens, Mauritia flexuosa, and other organisms with data available.",
-          "Markup": [
-            {
-              "Start": 35,
-              "Length": 22,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/59512#section=Natural-Products"
-            },
-            {
-              "Start": 59,
-              "Length": 17,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/93293#section=Natural-Products"
-            },
-            {
-              "Start": 82,
-              "Length": 15,
-              "URL": "#section=Taxonomy"
-            },
-            {
-              "Start": 0,
-              "Length": 13,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Beta-Carotene",
-              "Type": "PubChem Internal Link",
-              "Extra": "CID-5280489"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "ReferenceNumber": 75,
-    "Value": {
-      "StringWithMarkup": [
-        {
-          "String": "Beta-Carotene is a naturally-occurring retinol (vitamin A) precursor obtained from certain fruits and vegetables with potential antineoplastic and chemopreventive activities.  As an anti-oxidant, beta carotene inhibits free-radical damage to DNA.  This agent also induces cell differentiation and apoptosis of some tumor cell types, particularly in early stages of tumorigenesis, and enhances immune system activity by stimulating the release of natural killer cells, lymphocytes, and monocytes. (NCI04)",
-          "Markup": [
-            {
-              "Start": 0,
-              "Length": 13,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Beta-Carotene",
-              "Type": "PubChem Internal Link",
-              "Extra": "CID-5280489"
-            },
-            {
-              "Start": 39,
+              "Start": 141,
               "Length": 7,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/retinol",
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/hydroxy",
               "Type": "PubChem Internal Link",
-              "Extra": "CID-445354"
+              "Extra": "CID-961"
             },
             {
-              "Start": 196,
-              "Length": 13,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/beta-carotene",
+              "Start": 765,
+              "Length": 14,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/salicylic%20acid",
               "Type": "PubChem Internal Link",
-              "Extra": "CID-5280489"
+              "Extra": "CID-338"
+            },
+            {
+              "Start": 810,
+              "Length": 16,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetylsalicylate",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-3434975"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "ReferenceNumber": 35,
+    "Value": {
+      "StringWithMarkup": [
+        {
+          "String": "Also known as Aspirin, acetylsalicylic acid (ASA) is a commonly used drug for the treatment of pain and fever due to various causes. Acetylsalicylic acid has both anti-inflammatory and antipyretic effects.  This drug also inhibits platelet aggregation and is used in the prevention of blood clots stroke, and myocardial infarction (MI).    Interestingly, the results of various studies have demonstrated that long-term use of acetylsalicylic acid may decrease the risk of various cancers, including colorectal, esophageal, breast, lung, prostate, liver and skin cancer. Aspirin is classified as a non-selective cyclooxygenase (COX) inhibitor and is available in many doses and forms, including chewable tablets, suppositories, extended release formulations, and others.   Acetylsalicylic acid is a very common cause of accidental poisoning in young children. It should be kept out of reach from young children, toddlers, and infants.",
+          "Markup": [
+            {
+              "Start": 14,
+              "Length": 7,
+              "Type": "Italics"
+            },
+            {
+              "Start": 597,
+              "Length": 44,
+              "Type": "Italics"
+            },
+            {
+              "Start": 14,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 23,
+              "Length": 20,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetylsalicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 133,
+              "Length": 20,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Acetylsalicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 426,
+              "Length": 20,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetylsalicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 570,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 772,
+              "Length": 20,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Acetylsalicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "ReferenceNumber": 58,
+    "Description": "FDA Pharmacology Summary",
+    "Value": {
+      "StringWithMarkup": [
+        {
+          "String": "Aspirin is a Nonsteroidal Anti-inflammatory Drug and Platelet Aggregation Inhibitor. The mechanism of action of aspirin is as a Cyclooxygenase Inhibitor. The physiologic effect of aspirin is by means of Decreased Prostaglandin Production and Decreased Platelet Aggregation.",
+          "Markup": [
+            {
+              "Start": 0,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 112,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 180,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
             }
           ]
         }
@@ -143,17 +207,46 @@
   },
   {
     "ReferenceNumber": 85,
+    "Description": "LiverTox Summary",
     "Value": {
       "StringWithMarkup": [
         {
-          "String": "BETA CAROTENE is a small molecule drug with a maximum clinical trial phase of IV (across all indications) and has 5 investigational indications.",
+          "String": "Aspirin or acetylsalicylic acid is perhaps the most commonly used analgesic and antipyretic medication worldwide, having been in clinical use for over 100 years. Aspirin can cause several forms of liver injury: in high doses, aspirin can cause moderate to marked serum aminotransferase elevations occasionally with jaundice or signs of liver dysfunction, and in lower doses in susceptible children with a febrile illness aspirin can lead to Reye syndrome.",
           "Markup": [
             {
               "Start": 0,
-              "Length": 13,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/BETA-CAROTENE",
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin",
               "Type": "PubChem Internal Link",
-              "Extra": "CID-5280489"
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 11,
+              "Length": 20,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetylsalicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 162,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 226,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 421,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
             }
           ]
         }
@@ -161,23 +254,33 @@
     }
   },
   {
-    "ReferenceNumber": 106,
+    "ReferenceNumber": 86,
     "Value": {
       "StringWithMarkup": [
         {
-          "String": "beta-Carotene is a metabolite found in or produced by Saccharomyces cerevisiae.",
+          "String": "Aspirin has been reported in Brassica napus, Ixora coccinea, and Glycyrrhiza glabra with data available.",
           "Markup": [
             {
-              "Start": 54,
-              "Length": 24,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/4932"
+              "Start": 29,
+              "Length": 14,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/3708#section=Natural-Products"
+            },
+            {
+              "Start": 45,
+              "Length": 14,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/43503#section=Natural-Products"
+            },
+            {
+              "Start": 65,
+              "Length": 18,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/49827#section=Natural-Products"
             },
             {
               "Start": 0,
-              "Length": 13,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/beta-Carotene",
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin",
               "Type": "PubChem Internal Link",
-              "Extra": "CID-5280489"
+              "Extra": "CID-2244"
             }
           ]
         }
@@ -185,22 +288,226 @@
     }
   },
   {
-    "ReferenceNumber": 107,
+    "ReferenceNumber": 144,
     "Value": {
       "StringWithMarkup": [
         {
-          "String": "A carotenoid that is a precursor of VITAMIN A. Beta carotene is administered to reduce the severity of photosensitivity reactions in patients with erythropoietic protoporphyria (PORPHYRIA, ERYTHROPOIETIC)."
+          "String": "Aspirin is an orally administered non-steroidal antiinflammatory agent. Acetylsalicylic acid binds to and acetylates serine residues in cyclooxygenases, resulting in decreased synthesis of prostaglandin, platelet aggregation, and inflammation. This agent exhibits analgesic, antipyretic, and anticoagulant properties.",
+          "Markup": [
+            {
+              "Start": 0,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 72,
+              "Length": 20,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Acetylsalicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 117,
+              "Length": 6,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/serine",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-5951"
+            }
+          ]
         }
       ]
     }
   },
   {
-    "ReferenceNumber": 108,
+    "ReferenceNumber": 161,
+    "Value": {
+      "StringWithMarkup": [
+        {
+          "String": "ASPIRIN is a small molecule drug with a maximum clinical trial phase of IV (across all indications) that was first approved in 1950 and has 19 approved and 143 investigational indications.",
+          "Markup": [
+            {
+              "Start": 0,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/ASPIRIN",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "ReferenceNumber": 201,
+    "Value": {
+      "StringWithMarkup": [
+        {
+          "String": "Acetylsalicylic acid (acetosal) or aspirin is only found in individuals who have consumed this drug. Acetylsalicylic acid is a drug in the family of salicylates, often used as an analgesic (against minor pains and aches), antipyretic (against fever), and anti-inflammatory. It has also an anticoagulant effect and is used in long-term low-doses to prevent heart attacks and cancer. It was isolated from meadowsweet (Filipendula ulmaria, formerly classified as Spiraea ulmaria) by German researchers in 1839. While their extract was somewhat effective, it also caused digestive problems such as irritated stomach and diarrhoea, and even death when consumed in high doses. In 1853, a French chemist named Charles Frederic Gerhardt neutralized salicylic acid by buffering it with sodium (sodium salicylate) and acetyl chloride, creating acetosalicylic anhydride. Gerhardt's product worked, but he had no desire to market it and abandoned his discovery. In 1897, researcher Arthur Eichengrun and Felix Hoffmann, a research assistant at Friedrich Bayer & Co. in Germany, derivatized one of the hydroxyl functional groups in salicylic acid with an acetyl group (forming the acetyl ester), which greatly reduced the negative effects. This was the first synthetic drug, not a copy of something that existed in nature, and the start of the pharmaceuticals industry. The name 'aspirin' is composed of a- (from the acetyl group) -spir- (from the plant genus Spiraea) and -in (a common ending for drugs at the time). It has also been stated that the name originated by another means. As referring to AcetylSalicylic and 'pir' in reference to one of the scientists who was able to isolate it in crystalline form, Raffaele Piria. Finally 'in' due to the same reasons as stated above. Salicylic acid (which is a naturally occurring substance found in many plants) can be acetylated using acetic anhydride, yielding aspirin and acetic acid as a byproduct. It is a common experiment performed in organic chemistry labs, and generally tends to produce low yields due to the relative difficulty of its extraction from an aqueous state. The trick to getting the reaction to work is to acidify with phosphoric acid and heat the reagents under reflux with a boiling water bath for between 40 minutes and an hour. Aspirin acts as an inhibitor of cyclooxygenase which results in the inhibition of the biosynthesis of prostaglandins. Aspirin also inhibits platelet aggregation and is used in the prevention of arterial and venous thrombosis. (From Martindale, The Extra Pharmacopoeia, 30th ed, p5).",
+          "Markup": [
+            {
+              "Start": 0,
+              "Length": 20,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Acetylsalicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 22,
+              "Length": 8,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetosal",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 35,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 101,
+              "Length": 20,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Acetylsalicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 741,
+              "Length": 14,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/salicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-338"
+            },
+            {
+              "Start": 777,
+              "Length": 6,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/element/Sodium",
+              "Type": "PubChem Internal Link",
+              "Extra": "Element-Sodium"
+            },
+            {
+              "Start": 785,
+              "Length": 17,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/sodium%20salicylate",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-16760658"
+            },
+            {
+              "Start": 808,
+              "Length": 15,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetyl%20chloride",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-6367"
+            },
+            {
+              "Start": 1089,
+              "Length": 8,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/hydroxyl",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-157350"
+            },
+            {
+              "Start": 1119,
+              "Length": 14,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/salicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-338"
+            },
+            {
+              "Start": 1367,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 1419,
+              "Length": 4,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/spir",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-21700"
+            },
+            {
+              "Start": 1770,
+              "Length": 14,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Salicylic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-338"
+            },
+            {
+              "Start": 1873,
+              "Length": 16,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetic%20anhydride",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-7918"
+            },
+            {
+              "Start": 1900,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 1912,
+              "Length": 11,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/acetic%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-176"
+            },
+            {
+              "Start": 2178,
+              "Length": 15,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/phosphoric%20acid",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-1004"
+            },
+            {
+              "Start": 2244,
+              "Length": 5,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/water",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-962"
+            },
+            {
+              "Start": 2291,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            },
+            {
+              "Start": 2409,
+              "Length": 7,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin",
+              "Type": "PubChem Internal Link",
+              "Extra": "CID-2244"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "ReferenceNumber": 211,
+    "Value": {
+      "StringWithMarkup": [
+        {
+          "String": "The prototypical analgesic used in the treatment of mild to moderate pain. It has anti-inflammatory and antipyretic properties and acts as an inhibitor of cyclooxygenase which results in the inhibition of the biosynthesis of prostaglandins. Aspirin also inhibits platelet aggregation and is used in the prevention of arterial and venous thrombosis. (From Martindale, The Extra Pharmacopoeia, 30th ed, p5)"
+        }
+      ]
+    }
+  },
+  {
+    "ReferenceNumber": 212,
     "Name": "See Also",
     "Value": {
       "StringWithMarkup": [
         {
-          "String": "See also: Lycopene (part of); Broccoli (part of); Lycium barbarum fruit (part of).",
+          "String": "See also: Carbaspirin Calcium (is active moiety of); Aspirin dl-lysine (is active moiety of); Aspirin Aluminum (is active moiety of) ... View More ...",
           "Markup": [
             {
               "Start": 0,
@@ -209,24 +516,41 @@
             },
             {
               "Start": 10,
-              "Length": 8,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/446925"
+              "Length": 19,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/21975"
             },
             {
               "Start": 10,
-              "Length": 8,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=s&cid=446925",
+              "Length": 19,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=s&cid=21975",
               "Type": "Icon"
             },
             {
-              "Start": 30,
-              "Length": 8,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Broccoli"
+              "Start": 53,
+              "Length": 17,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/9905405"
             },
             {
-              "Start": 50,
-              "Length": 21,
-              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/Lycium%20barbarum%20fruit"
+              "Start": 53,
+              "Length": 17,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=s&cid=9905405",
+              "Type": "Icon"
+            },
+            {
+              "Start": 94,
+              "Length": 16,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/compound/3032790"
+            },
+            {
+              "Start": 94,
+              "Length": 16,
+              "URL": "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=s&cid=3032790",
+              "Type": "Icon"
+            },
+            {
+              "Start": 137,
+              "Length": 9,
+              "URL": "#section=Other-Relationships"
             }
           ]
         }

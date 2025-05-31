@@ -10,10 +10,23 @@ from web_scraper import *
 
 from fastapi import FastAPI, HTTPException
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:8000"
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"]
+)
 
 @app.get("/absorbsim-compound")
-def get_compound_name(name: str = None):
+def get_compound(name: str = None):
     if not name:
         raise HTTPException(status_code=404, detail="Missing compound name.")
     name = name.lower()
