@@ -40,7 +40,8 @@ def get_data_via_cid(compound_dict: dict) -> dict:
             compound_desc = f"No description found for #{compound_dict["cid"]}:{compound_dict["name"]}."
 
         compound_dict["compound_data_string"] = response.text
-        compound_dict["description"] = compound_desc
+        compound_dict["description"] = compound_desc["description"]
+        compound_dict["desc_ref"] = compound_desc["desc_ref"]
         return compound_dict
 
 
@@ -101,13 +102,12 @@ def get_description(data: json) -> str:
         desc = desc.get("StringWithMarkup", None)
     if desc:
         desc = desc[0].get("String")
-    write_data(info, 1)
     if ref:
         ref = ref[0]
     
     if desc:
         return {"description": desc,
-            "reference": ref}
+            "desc_ref": ref}
     raise ValueError("Error: No description found.")
 
 
