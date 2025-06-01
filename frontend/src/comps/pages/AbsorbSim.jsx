@@ -13,7 +13,7 @@ export default function AbsorbSim(props) {
   
   
   const [comp_name, setCompName] = useState("Test Compound");
-  const [comp_desc, setCompDesc] = useState("Dummy");
+  const [comp_desc, setCompDesc] = useState("Test Description");
   const [compound, setCompound] = useState(null);
 
  
@@ -32,7 +32,8 @@ export default function AbsorbSim(props) {
     console.log(compoundData)
     
     setCompound(compoundData);
-    setCompName(compoundData.name.title())
+    setCompName(compoundData.name)
+    setCompDesc(compoundData.description)
     
   } catch (error) {
     console.log(error);
@@ -92,12 +93,7 @@ export default function AbsorbSim(props) {
               {/* COMPOUND DESC */}
               <div className="mt-4 flex flex-col gap-1">
                 <h2 className="underline font-bold">Description:</h2>
-                <p className="text-pretty">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Quasi ea veniam repellat, modi expedita, repudiandae corporis,
-                  saepe magni veritatis pariatur omnis repellendus placeat ab
-                  voluptate. Et repellendus iste placeat minus.
-                </p>
+                <p className="text-pretty">{comp_desc}</p>
               </div>
 
               {/* COMPOUND TABLE DATA */}
