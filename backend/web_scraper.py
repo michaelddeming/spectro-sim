@@ -16,7 +16,7 @@ def get_cid(name: str) -> dict:
 
     try:
         compound_data = response.json()
-        return {"name": name.lower(), "cid": compound_data["IdentifierList"]["CID"][0]}
+        return {"name": name.title(), "cid": compound_data["IdentifierList"]["CID"][0]}
     except KeyError:
         raise ValueError(f"Invalid compound name={name}.")
 

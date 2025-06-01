@@ -33,6 +33,8 @@ def home():
 def get_compound(name: str = None):
     if not name:
         raise HTTPException(status_code=404, detail="Missing compound name.")
+    
+    # keys (compound names) forced to lower for consitent searches
     name = name.lower()
 
     try:
@@ -53,7 +55,7 @@ def get_compound(name: str = None):
         compound_dict = get_data_via_cid(compound_dict)
         compound_dict = extract_abs_spectro(compound_dict)
 
-        content[compound_dict["name"]] = compound_dict
+        content[compound_dict["name"].lower()] = compound_dict
 
         with open("cache/compound_cache.json", "w") as file:
 
@@ -63,6 +65,7 @@ def get_compound(name: str = None):
             
         
     except (ValueError, TypeError) as e:
+        print(e)
         raise HTTPException(status_code=404, detail=str(e))
 
                 
