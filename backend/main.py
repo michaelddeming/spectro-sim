@@ -25,6 +25,10 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+@app.get("/")
+def home():
+    return {"Test": "Test"}
+
 @app.get("/absorbsim-compound")
 def get_compound(name: str = None):
     if not name:
