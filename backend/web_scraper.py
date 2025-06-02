@@ -18,7 +18,7 @@ def get_cid(name: str) -> dict:
         compound_data = response.json()
         return {"name": name.title(), "cid": compound_data["IdentifierList"]["CID"][0]}
     except KeyError:
-        raise ValueError(f"Invalid compound name={name}.")
+        raise ValueError(f"Error -> Comound Invalid!")
 
 
 def get_data_via_cid(compound_dict: dict) -> dict:
@@ -63,7 +63,7 @@ def extract_abs_spectro(compound_dict) -> dict:
         del compound_dict["compound_data_string"]
         return compound_dict
     else:
-        raise ValueError(f"Error: No UV/Vis data found for {compound_dict["name"]}.")
+        raise ValueError(f"Error -> No UV/Vis data found for {compound_dict["name"]}!")
 
 
 def write_data(data: json, indicator: int):

@@ -11,10 +11,24 @@ import { useState, useEffect } from "react";
 
 export default function AbsorbSim(props) {
   
+  // DEFAULT VAR VALUES
+  const defaultValue = "N/A"
   
-  const [comp_name, setCompName] = useState("Test Compound");
-  const [comp_desc, setCompDesc] = useState("Test Description");
   const [compound, setCompound] = useState(null);
+  const [comp_name, setCompName] = useState(defaultValue);
+  const [comp_desc, setCompDesc] = useState(defaultValue);
+  const [comp_id, setCompId] = useState(defaultValue);
+  const [comp_wavelength, setCompWavelength] = useState(defaultValue);
+  const [comp_epsilon, setCompEpsilon] = useState(defaultValue);
+  
+
+  const [search_status, setSearchStatus] = useState(defaultValue);
+
+  const getStatusClass = () => {
+    if (search_status.startsWith("Success")) return "text-green-300";
+    if (search_status.startsWith("Error")) return "text-red-300";
+    return "text-cyan-300";
+  }
 
  
 
@@ -26,14 +40,32 @@ export default function AbsorbSim(props) {
       const response = await fetch(`http://127.0.0.1:8000/absorbsim-compound?name=${name}`, {
       method:"GET",
     });
-    const data = await response.json();
+
+    const data = await response.json()
+
+    if (response.ok){
+    setSearchStatus("Success!")
+
     const compoundKey = Object.keys(data)[0];
     const compoundData = data[compoundKey];   
-    console.log(compoundData)
-    
     setCompound(compoundData);
-    setCompName(compoundData.name)
-    setCompDesc(compoundData.description)
+    setCompName(compoundData.name);
+    setCompDesc(compoundData.description);
+    setCompId(compoundData.cid)
+    setCompWavelength(compoundData.lambda_max)
+    setCompEpsilon(compoundData.epsilon)
+
+    
+    }
+    else {
+    setCompound(null);
+    setCompName(defaultValue)
+    setCompDesc(defaultValue)
+    setSearchStatus(data.detail)
+    setCompId(defaultValue)
+    setCompWavelength(defaultValue)
+    setCompEpsilon(defaultValue)
+    }
     
   } catch (error) {
     console.log(error);
@@ -51,29 +83,35 @@ export default function AbsorbSim(props) {
         {/* COMPOUND SEARCH SECTION */}
         <div className="flex flex-col items-center gap-2">
           <h1 className="text-3xl mb-3">Compound Search</h1>
-          <div className="flex flex-row gap-2 w-fit">
-            <form onSubmit={handleCompoundSearch}>
+            <form className="flex flex-row gap-2 w-fit mb-3" onSubmit={handleCompoundSearch}>
             <CompoundInput name="compoundName"
             ></CompoundInput>
             <CompoundSearchButton text="SEARCH" type="submit"></CompoundSearchButton>
             </form>
 
-          </div>
-          <p style={{ color: "#DFFCFD" }} className="text-xs mt-1">
+            {/* PUBCHEM REFERENCE */}
+          <div className="text-[#DFFCFD] text-xs">
+             <p>
             Spectral data sourced from the{" "}
             <a
               href="https://pubchem.ncbi.nlm.nih.gov"
               target="_blank"
-              className="underline hover:text-cyan-300"
-            >
+              className="underline hover:text-cyan-300">
               PubChem
             </a>{" "}
             database.
           </p>
 
-          <small className="mt-4 mb-8">
-            Search Status: <small className="text-blue-300">None</small>
-          </small>
+          </div>
+         
+
+          {/* -------------- SEARCH STATUS INDICATOR ---------------*/}
+          <div className="flex flex-row flex-wrap items-baseline justify-center gap-2 mt-3 mb-9">
+            <h2>Search Status:</h2>
+            <p className={`text-[15px] ${getStatusClass()}`}>{search_status}</p>
+            
+          </div>
+          
         </div>
 
         {/* COMPOUND SEARCH PLOT GENERATION */}
@@ -120,16 +158,16 @@ export default function AbsorbSim(props) {
                     <tbody>
                       <tr className="hover:text-slate-800">
                         <td className="hover:bg-slate-500 hover:text-slate-200 px-4 py-2 border border-slate-700">
-                          Test
+                          {comp_id}
                         </td>
                         <td className="hover:bg-slate-500 hover:text-slate-200 px-4 py-2 border border-slate-700">
-                          Test
+                          {comp_name}
                         </td>
                         <td className="hover:bg-slate-500 hover:text-slate-200 px-4 py-2 border border-slate-700">
-                          Test
+                          {comp_wavelength}
                         </td>
                         <td className="hover:bg-slate-500 hover:text-slate-200 px-4 py-2 border border-slate-700">
-                          Test
+                          {comp_epsilon}
                         </td>
                       </tr>
                     </tbody>

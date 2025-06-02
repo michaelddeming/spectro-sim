@@ -16,5 +16,23 @@
     "solvent": "alcohol",
     "lambda_max": 227.0,
     "epsilon": 11481.54
+  },
+  "benzene": {
+    "name": "Benzene",
+    "cid": 241,
+    "description": "Benzene is a colorless liquid with a sweet odor. It evaporates into the air very quickly and dissolves slightly in water. It is highly flammable and is formed from both natural processes and human activities. Benzene is widely used in the United States; it ranks in the top 20 chemicals for production volume. Some industries use benzene to make other chemicals which are used to make plastics, resins, and nylon and synthetic fibers. Benzene is also used to make some types of rubbers, lubricants, dyes, detergents, drugs, and pesticides. Natural sources of benzene include volcanoes and forest fires. Benzene is also a natural part of crude oil, gasoline, and cigarette smoke.",
+    "desc_ref": null,
+    "solvent": "alcohol",
+    "lambda_max": 243.0,
+    "epsilon": 158.49
+  },
+  "caffeine": {
+    "name": "Caffeine",
+    "cid": 2519,
+    "description": "Caffeine appears as odorless white powder or white glistening needles, usually melted together. Bitter taste. Solutions in water are neutral to litmus. Odorless. (NTP, 1992)",
+    "desc_ref": "National Toxicology Program, Institute of Environmental Health Sciences, National Institutes of Health (NTP). 1992. National Toxicology Program Chemical Repository Database. Research Triangle Park, North Carolina.",
+    "solvent": "alcohol",
+    "lambda_max": 227.0,
+    "epsilon": 19952.62
   }
 }

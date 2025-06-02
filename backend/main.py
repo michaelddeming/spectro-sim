@@ -47,7 +47,6 @@ def get_compound(name: str = None):
         
 
     if found_compound:
-        print(f"Extracted from cache: {found_compound}")
         return {found_compound["name"]:found_compound}
     
     try:
