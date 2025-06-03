@@ -1,9 +1,7 @@
-import matplotlib.pyplot as plt
 import json
 
 from classes.Compound import Compound
 
-from globals import *
 import requests
 from web_scraper import *
 
@@ -50,9 +48,28 @@ def get_compound(name: str = None):
         return {found_compound["name"]:found_compound}
     
     try:
+        # Web Scrape Functions
         compound_dict = get_cid(name)
         compound_dict = get_data_via_cid(compound_dict)
         compound_dict = extract_abs_spectro(compound_dict)
+
+        # create a Compound class to access methods
+
+        compound = Compound(name=compound_dict["name"], lambda_max=compound_dict["lambda_max"], epsilon_max=compound_dict["epsilon_max"], sigma=15, concentration=1e-3)
+
+        # Add gaus dist. and abs value arrays for a compound.
+        compound.gen_gaussian_distribution(compound.WAVE_LENGTHS)
+        
+        compound.gen_absorption(epsilons=compound.generated_epsilons, light_length=1.0)
+    
+
+        # overwrite the partial compound dict from webscrape with gaus. and abs. info. 
+        compound_dict |= compound.__dict__ 
+
+        del compound_dict["generated_epsilons"]
+
+
+
 
         content[compound_dict["name"].lower()] = compound_dict
 
@@ -99,32 +116,7 @@ def get_compound(name: str = None):
 
 
 
-# compounds = []
 
-# with open("database/database.json", "r") as file:
-#     file_content = json.load(file)
-
-#     for row in file_content:
-#         compound = Compound(name = row["name"],
-#                             lambda_max= row["lambda_max"],
-#                             epsilon_max=row["epsilon_max"],
-#                             sigma=row["sigma"])
-#         compounds.append(compound)
-
-# test_comp = compounds[0]
-# test_comp.concentration = .01
-
-# test_comp.gen_gaussian_distribution(WAVE_LENGTHS)
-# test_comp.gen_absorption(test_comp.generated_epsilons, light_length=1.0)
-
-
-
-
-# plt.plot(WAVE_LENGTHS, test_comp.generated_absorption)
-# plt.title(f"Absorption Spectroscopy of {(test_comp.name).title()}")
-# plt.xlabel("Wavelength (nm)")
-# plt.ylabel("A(λ)")
-# plt.show()
 
 
 

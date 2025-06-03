@@ -20,6 +20,8 @@ export default function AbsorbSim(props) {
   const [comp_id, setCompId] = useState(defaultValue);
   const [comp_wavelength, setCompWavelength] = useState(defaultValue);
   const [comp_epsilon, setCompEpsilon] = useState(defaultValue);
+  const [comp_x_data, setCompXdata] = useState([0]);
+  const [comp_y_data, setCompYdata] = useState([0]);
   
 
   const [search_status, setSearchStatus] = useState(defaultValue);
@@ -47,13 +49,16 @@ export default function AbsorbSim(props) {
     setSearchStatus("Success!")
 
     const compoundKey = Object.keys(data)[0];
-    const compoundData = data[compoundKey];   
+    const compoundData = data[compoundKey]; 
+    console.log(compoundData)  
     setCompound(compoundData);
     setCompName(compoundData.name);
     setCompDesc(compoundData.description);
     setCompId(compoundData.cid)
     setCompWavelength(compoundData.lambda_max)
-    setCompEpsilon(compoundData.epsilon)
+    setCompEpsilon(compoundData.epsilon_max)
+    setCompXdata(compoundData.WAVE_LENGTHS)
+    setCompYdata(compoundData.generated_absorption)
 
     
     }
@@ -120,7 +125,7 @@ export default function AbsorbSim(props) {
           <div className="w-full lg:w-[48%]">
             {/* COMPOUND TITLE and GENERATE BUTTON */}
             <div className="flex flex-wrap items-center mb-2 gap-x-2 pr-2 w-full">
-              <h1 className="text-xl font-bold">{comp_name}</h1>
+              <h1 className="text-[30px] font-bold">{comp_name}</h1>
               <GeneratePlotButton text="Generate AbsorbSim"></GeneratePlotButton>
             </div>
 
@@ -137,7 +142,7 @@ export default function AbsorbSim(props) {
               {/* COMPOUND TABLE DATA */}
               <div className="mt-4">
                 <h2 className="font-bold underline">Spectral Data:</h2>
-                <div className="overflow-x-auto rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,.7)] mt-2">
+                <div className="overflow-x-auto rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,.5)] hover:shadow-[6px_6px_10px_rgba(0,0,0,.7)] transition-shadow duration-300 ease-in-out mt-2">
                   <table className="min-w-full text-left bg-slate-600 border-collapse">
                     <thead className="bg-slate-800 text-cyan-500">
                       <tr>
@@ -182,8 +187,11 @@ export default function AbsorbSim(props) {
             {/* PLOT & DOWNLOAD BTN */}
 
               <div className="flex flex-col   w-full max-w-[750px] gap-2 items-start">
-                <div className='w-full aspect-[4/3]'>
-                  <AbsorbSimPlot></AbsorbSimPlot>
+                <div className='w-full aspect-[4/3] rounded-lg overflow-clip bg-slate-800 border border-slate-700 shadow-[4px_4px_8px_rgba(0,0,0,.5)] hover:shadow-[6px_6px_10px_rgba(0,0,0,.7)] transition-shadow duration-300 ease-in-out'>
+                  <AbsorbSimPlot 
+                  y_data={comp_y_data} 
+                  x_data={comp_x_data}
+                  title={comp_name}></AbsorbSimPlot>
                 </div>
                 
                 

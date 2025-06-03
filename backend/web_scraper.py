@@ -18,7 +18,7 @@ def get_cid(name: str) -> dict:
         compound_data = response.json()
         return {"name": name.title(), "cid": compound_data["IdentifierList"]["CID"][0]}
     except KeyError:
-        raise ValueError(f"Error -> Comound Invalid!")
+        raise ValueError(f"Error -> Compound Not Found/Invalid!")
 
 
 def get_data_via_cid(compound_dict: dict) -> dict:
@@ -58,7 +58,7 @@ def extract_abs_spectro(compound_dict) -> dict:
         compound_dict["solvent"] = match.group(1).lower()
         compound_dict["lambda_max"] = float(match.group(2))
         epsilon = round(10 ** float(match.group(3)), 2)
-        compound_dict["epsilon"] = epsilon
+        compound_dict["epsilon_max"] = epsilon
 
         del compound_dict["compound_data_string"]
         return compound_dict
@@ -111,6 +111,6 @@ def get_description(data: json) -> str:
     raise ValueError("Error: No description found.")
 
 
-cid = get_cid("benzoic acid")
-data_dict = get_data_via_cid(cid)
-print(extract_abs_spectro(data_dict))
+# cid = get_cid("benzoic acid")
+# data_dict = get_data_via_cid(cid)
+# print(extract_abs_spectro(data_dict))
