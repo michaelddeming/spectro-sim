@@ -20,7 +20,7 @@ class Compound:
         self.concentration = concentration
         self.generated_epsilons = []
         self.generated_absorption = []
-        self.WAVE_LENGTHS = [val for val in range(1,1001,3)]
+        self.WAVE_LENGTHS = [val for val in range(1, 1001, 3)]
 
     def gen_gaussian_distribution(self, wave_lengths: list):
         for wave_length in wave_lengths:
@@ -62,8 +62,6 @@ class Compound:
 
 # test_comp.gen_gaussian_distribution(test_comp.WAVE_LENGTHS)
 # test_comp.gen_absorption(test_comp.generated_epsilons, light_length=LIGHT_LENGTH)
-
-
 
 
 # plt.plot(test_comp.WAVE_LENGTHS, test_comp.generated_absorption)

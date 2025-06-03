@@ -11,27 +11,26 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-origins = [
-    "http://localhost:5173",
-    "http://127.0.0.1:8000"
-]
+origins = ["http://localhost:5173", "http://127.0.0.1:8000"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=["GET", "POST"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
+
 
 @app.get("/")
 def home():
     return {"Test": "Test"}
 
+
 @app.get("/absorbsim-compound")
 def get_compound(name: str = None):
     if not name:
         raise HTTPException(status_code=404, detail="Missing compound name.")
-    
+
     # keys (compound names) forced to lower for consitent searches
     name = name.lower()
 
@@ -40,13 +39,12 @@ def get_compound(name: str = None):
             content = json.load(file)
     except FileNotFoundError:
         content = {}
-        
+
     found_compound = content.get(name)
-        
 
     if found_compound:
-        return {found_compound["name"]:found_compound}
-    
+        return {found_compound["name"]: found_compound}
+
     try:
         # Web Scrape Functions
         compound_dict = get_cid(name)
@@ -55,71 +53,32 @@ def get_compound(name: str = None):
 
         # create a Compound class to access methods
 
-        compound = Compound(name=compound_dict["name"], lambda_max=compound_dict["lambda_max"], epsilon_max=compound_dict["epsilon_max"], sigma=15, concentration=1e-3)
+        compound = Compound(
+            name=compound_dict["name"],
+            lambda_max=compound_dict["lambda_max"],
+            epsilon_max=compound_dict["epsilon_max"],
+            sigma=15,
+            concentration=1e-3,
+        )
 
         # Add gaus dist. and abs value arrays for a compound.
         compound.gen_gaussian_distribution(compound.WAVE_LENGTHS)
-        
-        compound.gen_absorption(epsilons=compound.generated_epsilons, light_length=1.0)
-    
 
-        # overwrite the partial compound dict from webscrape with gaus. and abs. info. 
-        compound_dict |= compound.__dict__ 
+        compound.gen_absorption(epsilons=compound.generated_epsilons, light_length=1.0)
+
+        # overwrite the partial compound dict from webscrape with gaus. and abs. info.
+        compound_dict |= compound.__dict__
 
         del compound_dict["generated_epsilons"]
-
-
-
 
         content[compound_dict["name"].lower()] = compound_dict
 
         with open("cache/compound_cache.json", "w") as file:
 
-                json.dump(content, file, indent=2)
+            json.dump(content, file, indent=2)
 
-        return {compound_dict['name']:compound_dict}
-            
-        
+        return {compound_dict["name"]: compound_dict}
+
     except (ValueError, TypeError) as e:
         print(e)
         raise HTTPException(status_code=404, detail=str(e))
-
-                
-
-        
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -75,10 +75,10 @@ def write_data(data: json, indicator: int):
 def get_section(sections: list, Heading: str, key: str):
 
     if sections and isinstance(sections[0], dict):
-            for section in sections:
-                if section[key] == Heading:
-                    return section
-            return None
+        for section in sections:
+            if section[key] == Heading:
+                return section
+        return None
     else:
         raise ValueError("No sections to parse.")
 
@@ -86,13 +86,12 @@ def get_section(sections: list, Heading: str, key: str):
 def get_description(data: json) -> str:
 
     temp = data["Record"]["Section"]
-    
+
     sections = get_section(temp, "Names and Identifiers", "TOCHeading")
-    
+
     if sections:
         sections = get_section(sections["Section"], "Record Description", "TOCHeading")
-        
-    
+
     info = sections.get("Information", None)
 
     if info:
@@ -104,10 +103,9 @@ def get_description(data: json) -> str:
         desc = desc[0].get("String")
     if ref:
         ref = ref[0]
-    
+
     if desc:
-        return {"description": desc,
-            "desc_ref": ref}
+        return {"description": desc, "desc_ref": ref}
     raise ValueError("Error: No description found.")
 
 
