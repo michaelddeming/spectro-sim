@@ -22,17 +22,33 @@ export default function AbsorbSim(props) {
   const [comp_epsilon, setCompEpsilon] = useState(defaultValue);
   const [comp_x_data, setCompXdata] = useState([0]);
   const [comp_y_data, setCompYdata] = useState([0]);
-  
-
   const [search_status, setSearchStatus] = useState(defaultValue);
 
   const getStatusClass = () => {
     if (search_status.startsWith("Success")) return "text-green-300";
     if (search_status.startsWith("Error")) return "text-red-300";
-    return "text-cyan-300";
+    return "text-cyan-400";
   }
 
+  const [content_section_style, setContentSectionStyle] = useState("opacity-0 flex flex-wrap w-full lg:p-10 justify-center gap-8 transition transition-discrete duration-0");
+
+  const [left_section_style, setLeftSectionStyle] = useState("w-full lg:w-[48%]");
+
+  const [right_section_style, setRightSectionStyle] = useState("flex justify-center items-center w-full lg:w-[48%] opacity-0 transition transition-discrete duration-500");
+
+  const handlePlotGeneration = (event) => {
+
+    // click event
+    
+    setLeftSectionStyle("w-full lg:w-[48%]")
+    // access the plot with the content section and make visible from hidden
+    setRightSectionStyle("flex justify-center items-center w-full lg:w-[48%] opacity-100 transition transition-discrete duration-500");
+
+    // access the overall content section and set back to flex-row lg:flex-nowrap
+    setContentSectionStyle("opacity-100 flex flex-row lg:flex-nowrap flex-wrap w-full lg:p-10 justify-center gap-8 transition transition-discrete duration-500");
+  }
  
+
 
   const handleCompoundSearch = async (event) => {
     event.preventDefault();
@@ -49,6 +65,7 @@ export default function AbsorbSim(props) {
     setSearchStatus("Success!")
 
     const compoundKey = Object.keys(data)[0];
+  
     const compoundData = data[compoundKey]; 
     console.log(compoundData)  
     setCompound(compoundData);
@@ -59,6 +76,17 @@ export default function AbsorbSim(props) {
     setCompEpsilon(compoundData.epsilon_max)
     setCompXdata(compoundData.WAVE_LENGTHS)
     setCompYdata(compoundData.generated_absorption)
+    
+    setContentSectionStyle("opacity-0 flex flex-col flex-wrap w-full lg:p-10 justify-center items-center gap-8 transition transition-discrete duration-0")
+
+    setLeftSectionStyle("w-full lg:w-[60%]")
+
+    setRightSectionStyle("flex justify-center items-center w-full lg:w-[48%] opacity-0 transition transition-discrete duration-0")
+
+    setTimeout(() => {
+    setContentSectionStyle("opacity-100 flex flex-col flex-wrap w-full lg:p-10 justify-center items-center gap-8 transition transition-discrete duration-500")
+    },50);
+    
 
     
     }
@@ -70,6 +98,7 @@ export default function AbsorbSim(props) {
     setCompId(defaultValue)
     setCompWavelength(defaultValue)
     setCompEpsilon(defaultValue)
+    setContentSectionStyle("opacity-0 flex flex-col flex-wrap w-full lg:p-10 justify-center items-center gap-8 transition transition-discrete duration-0")
     }
     
   } catch (error) {
@@ -120,13 +149,13 @@ export default function AbsorbSim(props) {
         </div>
 
         {/* COMPOUND SEARCH PLOT GENERATION */}
-        <div className="flex flex-wrap lg:flex-nowrap w-full lg:p-10 justify-center gap-8">
+        <div className={content_section_style}>
           {/* LEFT SECTION */}
-          <div className="w-full lg:w-[48%]">
+          <div className={left_section_style}>
             {/* COMPOUND TITLE and GENERATE BUTTON */}
             <div className="flex flex-wrap items-center mb-2 gap-x-2 pr-2 w-full">
               <h1 className="text-[30px] font-bold">{comp_name}</h1>
-              <GeneratePlotButton text="Generate AbsorbSim"></GeneratePlotButton>
+              <GeneratePlotButton onClick={handlePlotGeneration}text="Generate AbsorbSim"></GeneratePlotButton>
             </div>
 
             <hr></hr>
@@ -142,7 +171,7 @@ export default function AbsorbSim(props) {
               {/* COMPOUND TABLE DATA */}
               <div className="mt-4">
                 <h2 className="font-bold underline">Spectral Data:</h2>
-                <div className="overflow-x-auto rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,.5)] hover:shadow-[6px_6px_10px_rgba(0,0,0,.7)] transition-shadow duration-300 ease-in-out mt-2">
+                <div className="overflow-x-auto rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,.5)] hover:shadow-[6px_6px_10px_rgba(0,0,0,.7)] transition-shadow duration-500 ease-in-out mt-2">
                   <table className="min-w-full text-left bg-slate-600 border-collapse">
                     <thead className="bg-slate-800 text-cyan-500">
                       <tr>
@@ -183,11 +212,11 @@ export default function AbsorbSim(props) {
           </div>
 
           {/* RIGHT SECTION */}
-          <div className="flex justify-center items-center w-full lg:w-[48%]">
+          <div className={right_section_style}>
             {/* PLOT & DOWNLOAD BTN */}
 
-              <div className="flex flex-col   w-full max-w-[750px] gap-2 items-start">
-                <div className='w-full aspect-[4/3] rounded-lg overflow-clip bg-slate-800 border border-slate-700 shadow-[4px_4px_8px_rgba(0,0,0,.5)] hover:shadow-[6px_6px_10px_rgba(0,0,0,.7)] transition-shadow duration-300 ease-in-out'>
+              <div className="flex flex-col w-full max-w-[750px] gap-2 items-start">
+                <div className='w-full aspect-[4/3] rounded-lg overflow-clip bg-slate-800 border border-slate-700 shadow-[4px_4px_8px_rgba(0,0,0,.5)] hover:shadow-[6px_6px_10px_rgba(0,0,0,.7)] transition-shadow duration-500 ease-in-out'>
                   <AbsorbSimPlot 
                   y_data={comp_y_data} 
                   x_data={comp_x_data}
