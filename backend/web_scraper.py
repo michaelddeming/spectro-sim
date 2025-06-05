@@ -48,17 +48,55 @@ def get_data_via_cid(compound_dict: dict) -> dict:
 def extract_abs_spectro(compound_dict) -> dict:
     """Given the compound_dict returned by the get_data_via_cid(), search for a 'MAX ABSORPTION...' pattern within the compound_data_string within the compound_dict provided (compound_dict["compound_dict"]])."""
 
-    pattern = r"MAX ABSORPTION \((.+)\): (\d+) \w{2} \(LOG E= (.+?)\)"
+    # pattern = r"MAX ABSORPTION \((.+)\): (\d+) \w{2} \(LOG E= (.+?)\);"
     # group 1 -> Solvent (Alcohol)
     # group 2 -> lambda_max (NM)
     # group 3 -> epsilon
     found_match = {}
-    match = re.search(pattern, compound_dict["compound_data_string"])
+    match = re.search("MAX ABSORPTION", compound_dict["compound_data_string"])
+    
+    solvent_pattern = r"\(\w+\)"
+    data_pattern = r" (\d+\.?\d+) \w{2} \(LOG E= (.+?)\)"
+
     if match:
-        compound_dict["solvent"] = match.group(1).lower()
-        compound_dict["lambda_max"] = float(match.group(2))
-        epsilon = round(10 ** float(match.group(3)), 2)
-        compound_dict["epsilon_max"] = epsilon
+        start_span, stop_span = match.span()
+        
+        new_match_string = ""
+        for char in compound_dict["compound_data_string"][start_span:]:
+            if char == "\"":
+                break
+            new_match_string += char
+
+
+        
+        solvent = re.search(solvent_pattern, new_match_string).group(0)[1:-1].title()
+        print(solvent)
+        data_matches = re.findall(data_pattern, new_match_string)
+        print(data_matches)
+       
+    
+        max_epsilon = 0.0
+        max_lambda = 0.0
+        for i in range(len(data_matches)):
+            lambda_max, epsilon_max = data_matches[i]
+            lambda_max, epsilon_max = float(lambda_max), round(10 ** float(epsilon_max))
+            if epsilon_max >= max_epsilon:
+                max_epsilon = epsilon_max
+                max_lambda = lambda_max
+
+
+
+            
+            data_matches[i] = {"lambda_max": lambda_max,
+            "epsilon_max": epsilon_max}
+        
+
+        compound_dict["solvent"] = solvent
+        compound_dict["epsilon_max"] = max_epsilon
+        compound_dict["lambda_max"] = max_lambda
+        compound_dict["absorb_spectro_data"] = data_matches
+
+
 
         del compound_dict["compound_data_string"]
         return compound_dict
@@ -109,6 +147,7 @@ def get_description(data: json) -> str:
     raise ValueError("Error: No description found.")
 
 
-# cid = get_cid("benzoic acid")
-# data_dict = get_data_via_cid(cid)
-# print(extract_abs_spectro(data_dict))
+cid = get_cid("Quinine")
+data_dict = get_data_via_cid(cid)
+extract_abs_spectro(data_dict)
+

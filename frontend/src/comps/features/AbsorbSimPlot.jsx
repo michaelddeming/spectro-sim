@@ -34,8 +34,9 @@ export default function AbsorbSimPlot(props){
         layout={{
           autosize: true, 
           title: {
-            text: props.title + ' ' + 'Abs. Spectroscopy ',
-            font: {family: "Roboto", size: 22, color: TextColor},
+            text: props.title,
+            font: {family: "Roboto", size: 22, color: TextColor}
+            
             
             
           },

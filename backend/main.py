@@ -55,21 +55,18 @@ def get_compound(name: str = None):
 
         compound = Compound(
             name=compound_dict["name"],
-            lambda_max=compound_dict["lambda_max"],
-            epsilon_max=compound_dict["epsilon_max"],
-            sigma=15,
+            absorb_spectro_data=compound_dict["absorb_spectro_data"],
+            light_distance=1.0,
+            sigma=1,
             concentration=1e-3,
         )
 
         # Add gaus dist. and abs value arrays for a compound.
         compound.gen_gaussian_distribution(compound.WAVE_LENGTHS)
 
-        compound.gen_absorption(epsilons=compound.generated_epsilons, light_length=1.0)
-
         # overwrite the partial compound dict from webscrape with gaus. and abs. info.
         compound_dict |= compound.__dict__
 
-        del compound_dict["generated_epsilons"]
 
         content[compound_dict["name"].lower()] = compound_dict
 
