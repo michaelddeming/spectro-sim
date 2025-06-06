@@ -106,7 +106,7 @@ export default function AbsorbSim(props) {
   }}
 
 
-
+  
   
   
   
@@ -114,9 +114,11 @@ export default function AbsorbSim(props) {
     <>
       <Nav></Nav>
       <div className="flex flex-col items-center justify-center gap-4">
-        {/* COMPOUND SEARCH SECTION */}
+        
+        
+        {/* ------------- COMPOUND SEARCH SECTION -------------*/}
         <div className="flex flex-col items-center gap-2">
-          <h1 className="text-3xl mb-3">Compound Search</h1>
+          <h1 className="text-4xl underline decoration-2 underline-offset-4 mb-3">Compound Search</h1>
             <form className="flex flex-row gap-2 w-fit mb-3" onSubmit={handleCompoundSearch}>
             <CompoundInput name="compoundName"
             ></CompoundInput>
