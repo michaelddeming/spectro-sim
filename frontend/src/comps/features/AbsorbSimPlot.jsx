@@ -42,11 +42,19 @@ export default function AbsorbSimPlot(props){
           plot_bgcolor: "rgba(0,0,0,0)",
           paper_bgcolor: "rgba(0,0,0,0)",
           xaxis: {
+            title: {
+              text: "Wavelength (nm)",
+              font: {family: "Roboto", size: 14, color: TextColor}
+            },
             showgrid: true,
             gridcolor: GridColor,
             tickfont: {color: TextColor}
           },
           yaxis: {
+            title: {
+              text: "A(λ)",
+              font: {family: "Roboto", size: 14, color: TextColor}
+            },
             showgrid: true,
             gridcolor: GridColor,
             tickfont: {color: TextColor}
