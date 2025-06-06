@@ -117,38 +117,43 @@ export default function AbsorbSim(props) {
         
         
         {/* ------------- COMPOUND SEARCH SECTION -------------*/}
-        <div className="flex flex-col items-center gap-2">
-          <h1 className="text-4xl underline decoration-2 underline-offset-4 mb-3">Compound Search</h1>
-            <form className="flex flex-row gap-2 w-fit mb-3" onSubmit={handleCompoundSearch}>
-            <CompoundInput name="compoundName"
-            ></CompoundInput>
-            <CompoundSearchButton text="SEARCH" type="submit"></CompoundSearchButton>
-            </form>
+        <div className="flex flex-col items-center gap-4">
+          
+          <h1 className="text-4xl underline decoration-2 underline-offset-4">Compound Search</h1>
+          
+          <form className="flex flex-row gap-2 w-fit" onSubmit={handleCompoundSearch}>
+          <CompoundInput name="compoundName"
+          ></CompoundInput>
+          <CompoundSearchButton text="SEARCH" type="submit"></CompoundSearchButton>
+          </form>
 
-            {/* PUBCHEM REFERENCE */}
-          <div className="text-[#DFFCFD] text-xs">
+          {/* --------- PUBCHEM REFERENCE ------------ */}
+          <div className="text-cyan-100 text-[12px]">
              <p>
             Spectral data sourced from the{" "}
-            <a
-              href="https://pubchem.ncbi.nlm.nih.gov"
-              target="_blank"
-              className="underline hover:text-cyan-300">
-              PubChem
-            </a>{" "}
+              <a
+                href="https://pubchem.ncbi.nlm.nih.gov"
+                target="_blank"
+                className="underline hover:text-cyan-300">
+                PubChem
+              </a>{" "}
             database.
-          </p>
+            </p>
+          </div>
 
+          {/* -------------- SEARCH STATUS INDICATOR ---------------*/}
+          <div className="flex flex-row flex-wrap text-baseline justify-center gap-2 text-[16px]">
+            <h2>Search Status:</h2>
+            <p className={`${getStatusClass()}`}>{search_status}</p>
+            
+          </div>
+            
+          
+          
           </div>
          
 
-          {/* -------------- SEARCH STATUS INDICATOR ---------------*/}
-          <div className="flex flex-row flex-wrap items-baseline justify-center gap-2 mt-3 mb-9">
-            <h2>Search Status:</h2>
-            <p className={`text-[15px] ${getStatusClass()}`}>{search_status}</p>
-            
-          </div>
           
-        </div>
 
         {/* COMPOUND SEARCH PLOT GENERATION */}
         <div className={content_section_style}>
