@@ -70,9 +70,7 @@ def extract_abs_spectro(compound_dict) -> dict:
 
         
         solvent = re.search(solvent_pattern, new_match_string).group(0)[1:-1].title()
-        print(solvent)
         data_matches = re.findall(data_pattern, new_match_string)
-        print(data_matches)
        
     
         max_epsilon = 0.0
