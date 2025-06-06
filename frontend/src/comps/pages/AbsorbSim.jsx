@@ -6,8 +6,9 @@ import GeneratePlotButton from "../features/buttons/GeneratePlotButton";
 import AbsorbSimPlot from "../features/AbsorbSimPlot";
 import React from "react";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
+import Plotly from 'plotly.js-basic-dist';
 
 export default function AbsorbSim(props) {
   
@@ -105,8 +106,21 @@ export default function AbsorbSim(props) {
     console.log(error);
   }}
 
+  const [plot_ref, setPlotRef] = useState(null);
 
-  
+  const handleDownloadPlot = async (event) => {
+    console.log(plot_ref)
+    if (plot_ref) {
+      Plotly.downloadImage(plot_ref, {
+        format: "png",
+        filename: `${comp_id}_${comp_name}_absorption_spectroscopy`,
+        width: 800,
+        height: 600,
+        });
+    };
+
+
+  };
   
   
   
@@ -227,18 +241,17 @@ export default function AbsorbSim(props) {
                   <AbsorbSimPlot 
                   y_data={comp_y_data} 
                   x_data={comp_x_data}
-                  title={comp_name}></AbsorbSimPlot>
+                  title={comp_name}
+                  setPlotRef={setPlotRef}>
+                  </AbsorbSimPlot>
                 </div>
                 
                 
                 <div className="">
-                  <GeneratePlotButton text="Download AborbSim"></GeneratePlotButton>
+                  <GeneratePlotButton onClick={handleDownloadPlot} text="Download AborbSim"></GeneratePlotButton>
                 </div>
                 
               </div>
-                
-               
-              
             </div>
           </div>
       </div>

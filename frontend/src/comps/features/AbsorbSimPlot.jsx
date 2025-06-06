@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { use } from 'react';
 import { useState } from 'react';
 import Plot from 'react-plotly.js';
 
@@ -61,6 +60,11 @@ export default function AbsorbSimPlot(props){
             modeBarButtonsToRemove: ['toImage'],
         }}
         useResizeHandler={true}
+        onInitialized={(_, graphDiv) => {
+          if (props.setPlotRef) {
+            props.setPlotRef(graphDiv);
+          }
+        }}
         style={{ width: '100%', height: '100%' }}
         
         ></Plot>
