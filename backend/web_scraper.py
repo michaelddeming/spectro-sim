@@ -34,11 +34,8 @@ def get_data_via_cid(compound_dict: dict) -> dict:
         raise ValueError("Error 404, Invalid Search Response.")
 
     if response:
-        try:
-            compound_desc = get_description(response.json())
-        except ValueError as e:
-            compound_desc = f"No description found for #{compound_dict["cid"]}:{compound_dict["name"]}."
-
+        compound_desc = get_description(response.json())
+    
         compound_dict["compound_data_string"] = response.text
         compound_dict["description"] = compound_desc["description"]
         compound_dict["desc_ref"] = compound_desc["desc_ref"]
@@ -139,10 +136,9 @@ def get_description(data: json) -> str:
         desc = desc[0].get("String")
     if ref:
         ref = ref[0]
-
-    if desc:
-        return {"description": desc, "desc_ref": ref}
-    raise ValueError("Error: No description found.")
+    
+    return {"description": desc, "desc_ref": ref}
+    
 
 
 # cid = get_cid("Quinine")
