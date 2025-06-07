@@ -145,7 +145,6 @@ def get_description(data: json) -> str:
     raise ValueError("Error: No description found.")
 
 
-cid = get_cid("Quinine")
-data_dict = get_data_via_cid(cid)
-extract_abs_spectro(data_dict)
-
+# cid = get_cid("Quinine")
+# data_dict = get_data_via_cid(cid)
+# extract_abs_spectro(data_dict)
