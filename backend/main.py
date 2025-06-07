@@ -45,7 +45,11 @@ def get_compound(name: str = None):
         
         if not found_compound_data:
             raise HTTPException(status_code=404, detail=str(f"Error -> No UV/Vis data found for {name.title()}!"))
-
+        # update the search count 
+        found_compound_data["search_count"] = found_compound_data.get("search_count", 0) + 1
+        with open("cache/compound_cache.json", "w") as file:
+            json.dump(content, file, indent=2)
+            
         return {found_compound_data["name"]: found_compound_data}
         
         
@@ -96,6 +100,9 @@ def get_compound(name: str = None):
     del compound_dict["light_distance"]
     del compound_dict["WAVE_LENGTHS"]
 
+    # update the search count 
+    compound_dict["search_count"] = compound_dict.get("search_count", 0) + 1
+    
 
     content[compound_dict["name"].lower()] = compound_dict
 
