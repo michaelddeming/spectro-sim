@@ -67,6 +67,11 @@ def get_compound(name: str = None):
         # overwrite the partial compound dict from webscrape with gaus. and abs. info.
         compound_dict |= compound.__dict__
 
+        del compound_dict["sigma"]
+        del compound_dict["concentration"]
+        del compound_dict["light_distance"]
+        del compound_dict["WAVE_LENGTHS"]
+
 
         content[compound_dict["name"].lower()] = compound_dict
 
