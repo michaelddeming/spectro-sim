@@ -1,38 +1,42 @@
 import Nav from "../features/Nav";
 import LogoImage from "../features/LogoImage";
-
 import ComingSoonLogoImage from "../features/ComingSoonLogoImage";
+import Footer from "../features/Footer.jsx";
 
 function Home() {
+
     return(
         <>
+        <div className="flex flex-col min-h-screen">
+        
         <Nav></Nav>
-
-        <div className="flex flex-col justify-center items-center mb-10">
-            <p><i>Spectroscopy simplified...</i></p>
-        </div>
-
-        <div className="flex flex- items-center justify-center w-full">
-
+    
+        <main className="flex-grow flex flex-col items-center pt-24">
+             
+             {/* PAGE TITLE */}
+            <div className="p-4">
+                <p className="text-xl">Spectroscopy <i>simplified...</i></p>
+            </div>
 
             {/* SIMULATOR LOGO SELECTION AREA */}
-        <div className="flex flex-row flex-wrap gap-10 justify-around w-1/2">
-            <div className="flex flex-col items-center justify-center gap-2">
+            <div className="flex flex-row w-[85%] lg:w-[65%] flex-wrap gap-12 justify-evenly p-10">
+                    
                 <LogoImage
-                img_src="../public/absorbsim_logo.jpg"></LogoImage>
-                <h1 className="text-xl">AbsorbSim</h1>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2">
+                img_src="/absorbsim_logo.jpg"
+                path="/absorbsim"
+                label="AbsorbSim"></LogoImage>
                 <ComingSoonLogoImage
-                text="Coming Soon..."></ComingSoonLogoImage>
-                <h1 className="text-xl">CustomSim</h1>
+                label="Coming Soon..."></ComingSoonLogoImage>
             </div>
-        </div>
+            </main>
+            
+            {/* FOOTER SECTION */}
+            <div className="w-full">
+                <Footer></Footer>
+            </div>
 
         </div>
         
-        
-
 
         
 

@@ -1,12 +1,12 @@
 import CompoundSearchButton from "../features/buttons/CompoundSearchButton";
 import CompoundInput from "../features/CompoundInput";
 import Nav from "../features/Nav";
-import Card from "../features/Card";
 import GeneratePlotButton from "../features/buttons/GeneratePlotButton";
 import AbsorbSimPlot from "../features/AbsorbSimPlot";
-import React from "react";
+import Footer from "../features/Footer";
 
-import { useState, useEffect, useRef } from "react";
+
+import { useState } from "react";
 
 import Plotly from 'plotly.js-basic-dist';
 
@@ -126,8 +126,11 @@ export default function AbsorbSim(props) {
   
   return (
     <>
+    <div className="flex flex-col min-h-screen">
+    
       <Nav></Nav>
-      <div className="flex flex-col items-center justify-center gap-4">
+      
+      <main className="flex flex-col flex-grow items-center mt-24 gap-4">
         
         
         {/* ------------- COMPOUND SEARCH SECTION -------------*/}
@@ -254,7 +257,12 @@ export default function AbsorbSim(props) {
               </div>
             </div>
           </div>
-      </div>
+      </main>
+      
+    <Footer></Footer>
+    </div>
+      
+      
     </>
   );
 };
