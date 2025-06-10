@@ -56,7 +56,7 @@ export default function AbsorbSim(props) {
     const name = event.target.elements.compoundName.value.trim()
     if (!name) return;
     try {
-      const response = await fetch(`http://127.0.0.1:8000/absorbsim-compound?name=${name}`, {
+      const response = await fetch(`https://spectro-sim-backend.onrender.com/absorbsim-compound?name=${name}`, {
       method:"GET",
     });
 
