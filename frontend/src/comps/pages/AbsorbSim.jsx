@@ -239,7 +239,7 @@ export default function AbsorbSim(props) {
           <div className={right_section_style}>
             {/* PLOT & DOWNLOAD BTN */}
 
-              <div className="flex flex-col w-full max-w-[750px] gap-2 items-start">
+              <div className="flex flex-col w-full max-w-[750px] gap-2 items-start mb-4">
                 <div className='w-full aspect-[4/3] rounded-lg overflow-clip bg-slate-800 border border-slate-700 shadow-[4px_4px_8px_rgba(0,0,0,.5)] hover:shadow-[6px_6px_10px_rgba(0,0,0,.7)] transition-shadow duration-500 ease-in-out'>
                   <AbsorbSimPlot 
                   y_data={comp_y_data} 

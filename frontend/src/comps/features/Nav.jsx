@@ -15,16 +15,14 @@ function Nav(){
             {/* PAGE NAVIGATION */}
             <div className="flex gap-10 text-2xl">
                 
-                <Link to="/" className="hover:text-slate-500">Home</Link>
-                <Link to="/about" className="hover:text-slate-500">About</Link>
+                <Link to="/" className="hover:text-slate-400">Home</Link>
+                <Link to="/about" className="hover:text-slate-400">About</Link>
 
                 <div className="relative group">
-                    <button className="inline-block cursor-pointer ">Simulators</button>
+                    <button className="inline-block cursor-pointer hover:text-slate-400 group-hover:text-slate-400">Simulators</button>
 
-                    <div className="absolute hidden group-hover:flex flex-col whitespace-nowrap">
-                        <Link to="/absorbsim" className="hover:text-slate-500">AbsorbSim</Link>
-                        <Link className="hover:text-slate-500">Coming Soon!</Link>
-                    
+                    <div className="absolute hidden group-hover:flex group-hover:flex-col group-hover:text-wrap">
+                        <Link to="/absorbsim" className="hover:text-cyan-500">AbsorbSim</Link>                    
                     </div>
                 </div>
             </div>
