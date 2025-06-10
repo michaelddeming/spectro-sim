@@ -1,11 +1,10 @@
 import json
 
-from classes.Compound import Compound
+from .classes.Compound import Compound
 
-import requests
-from web_scraper import *
+from .web_scraper import *
 
-from cache.cache_clear import cache_clear
+from .cache.cache_clear import cache_clear
 
 from fastapi import FastAPI, HTTPException
 
