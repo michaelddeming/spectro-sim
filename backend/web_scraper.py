@@ -26,7 +26,7 @@ def get_data_via_cid(compound_dict: dict) -> dict:
 
     Returns a dict for compound_name, compound_cid, compound_data_text."""
 
-    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/{compound_dict["cid"]}/JSON"
+    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/{compound_dict['cid']}/JSON"
 
     try:
         response = requests.get(url)
