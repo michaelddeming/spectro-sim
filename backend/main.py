@@ -10,6 +10,9 @@ from cache.cache_clear import cache_clear
 from fastapi import FastAPI, HTTPException
 
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+
+
 
 app = FastAPI()
 origins = ["http://localhost:5173", "http://127.0.0.1:8000"]
@@ -20,6 +23,8 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
+
+app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
 
 
 @app.get("/")
