@@ -96,7 +96,7 @@ def extract_abs_spectro(compound_dict) -> dict:
         del compound_dict["compound_data_string"]
         return compound_dict
     else:
-        raise ValueError(f"Error -> No UV/Vis data found for {compound_dict["name"]}!")
+        raise ValueError(f"Error -> No UV/Vis data found for {compound_dict['name']}!")
 
 
 def write_data(data: json, indicator: int):
