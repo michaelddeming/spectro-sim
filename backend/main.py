@@ -5,6 +5,7 @@ from classes.Compound import Compound
 import requests
 from web_scraper import *
 
+from cache.cache_clear import cache_clear
 
 from fastapi import FastAPI, HTTPException
 
@@ -31,29 +32,39 @@ def get_compound(name: str = None):
     if not name:
         raise HTTPException(status_code=404, detail="Missing compound name.")
 
-    # keys (compound names) forced to lower for consitent searches
+    # keys (compound names) forced to lower
     name = name.lower()
 
     try:
         with open("cache/compound_cache.json", "r") as file:
             content = json.load(file)
+            if content["total_search_count"] >= 500:
+                content = cache_clear("cache/compound_cache.json", name)
     except FileNotFoundError:
         content = {}
 
+    # Search Cache for Compound name
     if name in content:
         found_compound_data = content.get(name)
+
+        # update the total search count
+        content["total_search_count"] = content.get("total_search_count", 0) + 1
         
         if not found_compound_data:
+            with open("cache/compound_cache.json", "w") as file:
+                json.dump(content, file, indent=2)
             raise HTTPException(status_code=404, detail=str(f"Error -> No UV/Vis data found for {name.title()}!"))
-        # update the search count 
+        # update the search count of compound
         found_compound_data["search_count"] = found_compound_data.get("search_count", 0) + 1
+
+
         with open("cache/compound_cache.json", "w") as file:
             json.dump(content, file, indent=2)
             
         return {found_compound_data["name"]: found_compound_data}
         
         
-
+    # Search PubChem for Compound name
     try:
         # Web Scrape Functions
         compound_dict = get_cid(name)
@@ -71,8 +82,12 @@ def get_compound(name: str = None):
         del compound_dict["description"]
         del compound_dict["desc_ref"]
 
-
+        # update the total search count
+        content["total_search_count"] = content.get("total_search_count", 0) + 1
+        
         content[compound_dict["name"].lower()] = None
+        
+      
 
         with open("cache/compound_cache.json", "w") as file:
             json.dump(content, file, indent=2)
@@ -102,7 +117,10 @@ def get_compound(name: str = None):
 
     # update the search count 
     compound_dict["search_count"] = compound_dict.get("search_count", 0) + 1
-    
+
+    # update the total search count
+    content["total_search_count"] = content.get("total_search_count", 0) + 1
+
 
     content[compound_dict["name"].lower()] = compound_dict
 
