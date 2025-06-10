@@ -1,5 +1,7 @@
 import json
 
+import os
+
 from .classes.Compound import Compound
 
 from .web_scraper import *
@@ -10,6 +12,8 @@ from fastapi import FastAPI, HTTPException
 
 from fastapi.middleware.cors import CORSMiddleware
 
+base = os.path.dirname(os.path.abspath(__file__))
+cache_file = os.path.join(base, "cache", "compound_cache.json")
 
 
 app = FastAPI()
@@ -37,10 +41,10 @@ def get_compound(name: str = None):
     name = name.lower()
 
     try:
-        with open("cache/compound_cache.json", "r") as file:
+        with open(cache_file, "r") as file:
             content = json.load(file)
             if content["total_search_count"] >= 500:
-                content = cache_clear("cache/compound_cache.json", name)
+                content = cache_clear(cache_file, name)
     except FileNotFoundError:
         content = {}
 
@@ -52,14 +56,14 @@ def get_compound(name: str = None):
         content["total_search_count"] = content.get("total_search_count", 0) + 1
         
         if not found_compound_data:
-            with open("cache/compound_cache.json", "w") as file:
+            with open(cache_file, "w") as file:
                 json.dump(content, file, indent=2)
             raise HTTPException(status_code=404, detail=str(f"Error -> No UV/Vis data found for {name.title()}!"))
         # update the search count of compound
         found_compound_data["search_count"] = found_compound_data.get("search_count", 0) + 1
 
 
-        with open("cache/compound_cache.json", "w") as file:
+        with open(cache_file, "w") as file:
             json.dump(content, file, indent=2)
             
         return {found_compound_data["name"]: found_compound_data}
@@ -90,7 +94,7 @@ def get_compound(name: str = None):
         
       
 
-        with open("cache/compound_cache.json", "w") as file:
+        with open(cache_file, "w") as file:
             json.dump(content, file, indent=2)
 
         raise HTTPException(status_code=404, detail=str(e))
@@ -125,7 +129,7 @@ def get_compound(name: str = None):
 
     content[compound_dict["name"].lower()] = compound_dict
 
-    with open("cache/compound_cache.json", "w") as file:
+    with open(cache_file, "w") as file:
 
         json.dump(content, file, indent=2)
 
