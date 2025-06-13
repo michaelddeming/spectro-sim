@@ -28,6 +28,7 @@ export default function AbsorbSim(props) {
   const getStatusClass = () => {
     if (search_status.startsWith("Success")) return "text-green-300";
     if (search_status.startsWith("Error")) return "text-red-300";
+    if (search_status.startsWith("Searching")) return "text-yellow-300";
     return "text-cyan-400";
   }
 
@@ -55,11 +56,13 @@ export default function AbsorbSim(props) {
     event.preventDefault();
     const name = event.target.elements.compoundName.value.trim()
     if (!name) return;
+    
     try {
+      setSearchStatus("Searching Database...")
       const response = await fetch(`https://spectro-sim-backend.onrender.com/absorbsim-compound?name=${name}`, {
       method:"GET",
     });
-
+    
     const data = await response.json()
 
     if (response.ok){
@@ -130,7 +133,7 @@ export default function AbsorbSim(props) {
     
       <Nav></Nav>
       
-      <main className="flex flex-col flex-grow items-center mt-24 gap-4">
+      <main className="flex flex-col flex-grow items-center pt-12 gap-4">
         
         
         {/* ------------- COMPOUND SEARCH SECTION -------------*/}
