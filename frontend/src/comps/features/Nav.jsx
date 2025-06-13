@@ -37,7 +37,7 @@ function Nav() {
 
             {showSimMenu && (
               <div className="absolute top-full mt-1 flex flex-col lg:text-wrap">
-                <Link to="/absorbsim" className="lg:hover:text-cyan-500">AbsorbSim</Link>
+                <Link to="/absorbsim" className="lg:hover:text-cyan-500 sm:text-cyan-500">AbsorbSim</Link>
               </div>
             )}
           </div>

@@ -11,7 +11,7 @@ function Home() {
         
         <Nav></Nav>
     
-        <main className="flex-grow flex flex-col items-center pt-24">
+        <main className="flex-grow flex flex-col items-center pt-8">
              
              {/* PAGE TITLE */}
             <div className="p-4">
