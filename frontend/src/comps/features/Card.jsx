@@ -14,15 +14,16 @@ function Card({children}){
         p-6 
         bg-slate-800 
         transform
-        hover:scale-108
-        duration-250
+        lg:hover:scale-105
+        duration-300
         shadow-[4px_4px_8px_rgba(0,0,0,.5)] 
-        hover:shadow-[6px_6px_10px_rgba(0,0,0,.7)] 
+        lg:hover:shadow-[6px_6px_10px_rgba(0,0,0,.7)] 
         transition-all
-        hover:ring-4
-        hover:ring-cyan-700
+        lg:hover:ring-4
+        lg:hover:ring-cyan-700
         ease-in-out
-        group">
+        group
+        ">
            {children}
         </div>
     );
