@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xsm: '375px',
+      },
       fontFamily: {
         roboto: ['Roboto', 'ui-sans-serif', 'system-ui'],
         oxanium: ['Oxanium', 'ui-sans-serif', 'system-ui']
