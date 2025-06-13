@@ -9,10 +9,10 @@ export default function About(){
                 <Nav></Nav>
 
                 {/* ABOUT PAGE CONTENT */}
-                <main className="flex-grow flex flex-col items-center pt-12">
+                <main className="flex-grow flex flex-col items-center pt-12 mb-8">
                     
                     {/* ABOUT PAGE TITLE */}
-                    <div className="p-4">
+                    <div className="mb-4">
                         <p className="text-xl">What is <b className="underline">spectroscopy</b>?</p>
                     </div>
                     
