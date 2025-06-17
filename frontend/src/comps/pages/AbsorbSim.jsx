@@ -167,7 +167,9 @@ export default function AbsorbSim(props) {
             <p className={`${getStatusClass()}`}>{search_status}</p>
             
           </div>
-            
+          <div>
+            <small>Free hosting via Render.com — please allow time for server spin-up.</small>
+          </div>
           
           
           </div>
